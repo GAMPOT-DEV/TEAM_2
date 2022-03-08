@@ -1,1 +1,1 @@
-# GAMPOT-DEV-TEAM_2
+# 2팀 작업 저장소
