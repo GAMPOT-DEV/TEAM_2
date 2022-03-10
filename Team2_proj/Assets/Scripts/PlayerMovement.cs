@@ -11,8 +11,7 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody myRigid;
     private float currentRot;
 
-
-
+    
 
 
     // Start is called before the first frame update
