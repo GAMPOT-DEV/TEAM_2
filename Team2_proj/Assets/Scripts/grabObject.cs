@@ -12,6 +12,7 @@ public class grabObject : MonoBehaviour
     private Collider myCollider;
     private MeshRenderer myRenderer;
     private float objDistance;
+    private Transform playerPos;
 
     private bool isGrab;
     private bool isGrabable;
@@ -21,7 +22,7 @@ public class grabObject : MonoBehaviour
     void Start()
     {
         isGrab = false;
-  
+        playerPos = GameObject.FindWithTag("Player").transform;
     }
 
     void Update()
@@ -90,7 +91,7 @@ public class grabObject : MonoBehaviour
     void distanceCulculate() //물제와 플레이어 사이의 거리를 측정 후 잡을 수 있는지 판단
     {
         Vector3 _objPos = transform.position;
-        Vector3 _playerPos = GameObject.Find("Player").GetComponent<PlayerMovement>().transform.position;
+        Vector3 _playerPos = playerPos.position;
         objDistance = Vector3.Distance(_objPos, _playerPos);
 
         if (objDistance <= 3.0f)
