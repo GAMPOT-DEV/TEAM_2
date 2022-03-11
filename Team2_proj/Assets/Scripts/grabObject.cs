@@ -2,8 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-//�� �ڵ�� ���ͷ�Ʈ�� ��� ������Ʈ���� �ٿ��� ��.
-
 public class grabObject : MonoBehaviour
 {
     public Transform theDest;
@@ -27,14 +25,13 @@ public class grabObject : MonoBehaviour
 
     void Update()
     {
-        //���콺�� Ŭ���ϰ� ������ ������Ʈ�� highlight���� ����
         isGrab = Input.GetMouseButton(0);
         distanceCulculate();
         objSpin();
     }
 
 
-    void OnMouseDown() //
+    void OnMouseDown()
     {
         if(isGrabable)
         {
@@ -47,7 +44,7 @@ public class grabObject : MonoBehaviour
 
 
             transform.position = theDest.position;
-            transform.parent = GameObject.Find("GrabDest").transform;
+            transform.parent = GameObject.Find("The Dest").transform;
         }
         
 
@@ -70,7 +67,7 @@ public class grabObject : MonoBehaviour
     {
         myRenderer = GetComponent<MeshRenderer>();
 
-        if ((!isGrab)&&(isGrabable)) //��� ���� ���� �� ���� X
+        if ((!isGrab)&&(isGrabable))
         {
             myRenderer.material.color = new Color(1, 0, 0);
         }
@@ -89,7 +86,7 @@ public class grabObject : MonoBehaviour
     }
 
    
-    void distanceCulculate() //������ �÷��̾� ������ �Ÿ��� ���� �� ���� �� �ִ��� �Ǵ�
+    void distanceCulculate()
     {
         Vector3 _objPos = transform.position;
         Vector3 _playerPos = playerPos.position;

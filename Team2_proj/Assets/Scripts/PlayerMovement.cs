@@ -1,61 +1,91 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public Camera myCamera;
-    public float rotSpeed;
+    public Rigidbody playerRigidbody;
+    public Camera playerCam;
+    public PhysicMaterial PlayerFriction;
 
-    public float playerSpeed;
-    private Rigidbody myRigid;
-    private float currentRot;
+    float MoveSpeed;
+    float rotSpeed;
+    float currentRot;
+    float jumpPower;
+    bool isJumping;
 
-    
-
-
-    // Start is called before the first frame update
     void Start()
     {
-        myRigid = GetComponent<Rigidbody>();
-        
-
-
+        MoveSpeed = 4.0f;
+        rotSpeed = 3.0f;
+        currentRot = 0f;
+        jumpPower = 5.0f;
+        isJumping = false;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void FixedUpdate()
     {
         PlayerMove();
-        CameraRotate();
+    }
 
-
-
+    void Update()
+    {
+        Jump();
+        RotCtrl();
     }
 
     void PlayerMove()
     {
-        //캐릭터 무브먼트
-        float _Xinput = Input.GetAxisRaw("Horizontal");
-        float _Zinput = Input.GetAxisRaw("Vertical");
+        float xInput = Input.GetAxis("Horizontal");
+        float zInput = Input.GetAxis("Vertical");
 
-        float _Xvelocity = _Xinput * playerSpeed;
-        float _Zvelocity = _Zinput * playerSpeed;
+        float xSpeed = xInput * MoveSpeed;
+        float zSpeed = zInput * MoveSpeed;
 
-        transform.Translate(Vector3.right * _Xvelocity * Time.deltaTime);
-        transform.Translate(Vector3.forward * _Zvelocity * Time.deltaTime);
+        transform.Translate(Vector3.forward * zSpeed * Time.deltaTime);
+        transform.Translate(Vector3.right * xSpeed * Time.deltaTime);
     }
 
-    void CameraRotate()
+    void Jump()
     {
-        //카메라 회전
-        float _rotX = Input.GetAxisRaw("Mouse Y") * rotSpeed;
-        float _rotY = Input.GetAxisRaw("Mouse X") * rotSpeed;
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            if (isJumping != true)
+            {
+                isJumping = true;
+                playerRigidbody.AddForce(Vector3.up * jumpPower, ForceMode.Impulse);
+                PlayerFriction.dynamicFriction = 0;
+                PlayerFriction.staticFriction = 0;
+            }
+            return;
+        }
+    }
 
-        currentRot -= _rotX;
-        currentRot = Mathf.Clamp(currentRot, -45f, 45f);
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("floor"))
+        {
+            isJumping = false;
+            PlayerFriction.dynamicFriction = 0.6f;
+            PlayerFriction.staticFriction = 0.6f;
+        }
+    }
 
-        this.transform.localRotation *= Quaternion.Euler(0, _rotY, 0f);
-        myCamera.transform.localEulerAngles = new Vector3(currentRot, 0f, 0f);
+    void RotCtrl()
+    {
+        float rotX = Input.GetAxis("Mouse Y") * rotSpeed;
+        float rotY = Input.GetAxis("Mouse X") * rotSpeed;
+
+        // 마우스 반전
+        currentRot -= rotX;
+
+        // 마우스가 특정 각도를 넘어가지 않게 예외처리
+        currentRot = Mathf.Clamp(currentRot, -80f, 80f);
+
+        // Camera는 Player의 자식이므로 플레이어의 Y축 회전은 Camera에게도 똑같이 적용됨
+        this.transform.localRotation *= Quaternion.Euler(0, rotY, 0);
+        // Camera의 transform 컴포넌트의 로컬로테이션의 오일러각에 
+        // 현재X축 로테이션을 나타내는 오일러각을 할당해준다.
+        playerCam.transform.localEulerAngles = new Vector3(currentRot, 0f, 0f);
     }
 }
