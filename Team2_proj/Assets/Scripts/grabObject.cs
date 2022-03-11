@@ -1,7 +1,6 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 
 public class grabObject : MonoBehaviour
 {
@@ -15,7 +14,7 @@ public class grabObject : MonoBehaviour
 
     private bool isGrab;
     private bool isGrabable;
-
+ 
 
 
     void Start()
@@ -28,12 +27,13 @@ public class grabObject : MonoBehaviour
     {
         isGrab = Input.GetMouseButton(0);
         distanceCulculate();
+        objSpin();
     }
 
 
-    void OnMouseDown() //
+    void OnMouseDown()
     {
-        if (isGrabable)
+        if(isGrabable)
         {
             myRigid = GetComponent<Rigidbody>();
             myCollider = GetComponent<Collider>();
@@ -44,13 +44,13 @@ public class grabObject : MonoBehaviour
 
 
             transform.position = theDest.position;
-            transform.parent = GameObject.Find("GrabDest").transform;
+            transform.parent = GameObject.Find("The Dest").transform;
         }
+        
 
-
-
+        
     }
-
+    
 
     void OnMouseUp()
     {
@@ -67,17 +67,17 @@ public class grabObject : MonoBehaviour
     {
         myRenderer = GetComponent<MeshRenderer>();
 
-        if ((!isGrab) && (isGrabable))
+        if ((!isGrab)&&(isGrabable))
         {
             myRenderer.material.color = new Color(1, 0, 0);
         }
 
-        if (!isGrabable)
+        if(!isGrabable)
         {
             myRenderer.material.color = new Color(1, 1, 1);
         }
 
-
+        
     }
 
     void OnMouseExit()
@@ -85,7 +85,7 @@ public class grabObject : MonoBehaviour
         myRenderer.material.color = new Color(1, 1, 1);
     }
 
-
+   
     void distanceCulculate()
     {
         Vector3 _objPos = transform.position;
@@ -102,4 +102,16 @@ public class grabObject : MonoBehaviour
         }
 
     }
+
+    void objSpin()
+    {
+        
+        if(Input.GetKeyDown(KeyCode.R))
+        {
+            transform.Rotate(0,90,0,Space.Self);
+            Debug.Log("돌아감");
+        }
+    }
+
+
 }
