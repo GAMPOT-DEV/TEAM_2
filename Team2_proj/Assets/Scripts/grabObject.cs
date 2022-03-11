@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-//ÀÌ ÄÚµå´Â ÀÎÅÍ·ºÆ®ÇÒ ¸ğµç ¿ÀºêÁ§Æ®¿¡°Ô ºÙ¿©¾ß ÇÔ.
+//ï¿½ï¿½ ï¿½Úµï¿½ï¿½ ï¿½ï¿½ï¿½Í·ï¿½Æ®ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ï¿½ï¿½ ï¿½Ù¿ï¿½ï¿½ï¿½ ï¿½ï¿½.
 
 public class grabObject : MonoBehaviour
 {
@@ -27,9 +27,10 @@ public class grabObject : MonoBehaviour
 
     void Update()
     {
-        //¸¶¿ì½º¸¦ Å¬¸¯ÇÏ°í ÀÖÀ¸¸é ¿ÀºêÁ§Æ®°¡ highlightµÇÁö ¾ÊÀ½
+        //ï¿½ï¿½ï¿½ì½ºï¿½ï¿½ Å¬ï¿½ï¿½ï¿½Ï°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ highlightï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         isGrab = Input.GetMouseButton(0);
         distanceCulculate();
+        objSpin();
     }
 
 
@@ -69,7 +70,7 @@ public class grabObject : MonoBehaviour
     {
         myRenderer = GetComponent<MeshRenderer>();
 
-        if ((!isGrab)&&(isGrabable)) //Àâ°í ÀÖÀ» ¶§´Â »ö º¯°æ X
+        if ((!isGrab)&&(isGrabable)) //ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ X
         {
             myRenderer.material.color = new Color(1, 0, 0);
         }
@@ -88,7 +89,7 @@ public class grabObject : MonoBehaviour
     }
 
    
-    void distanceCulculate() //¹°Á¦¿Í ÇÃ·¹ÀÌ¾î »çÀÌÀÇ °Å¸®¸¦ ÃøÁ¤ ÈÄ ÀâÀ» ¼ö ÀÖ´ÂÁö ÆÇ´Ü
+    void distanceCulculate() //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Å¸ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ö´ï¿½ï¿½ï¿½ ï¿½Ç´ï¿½
     {
         Vector3 _objPos = transform.position;
         Vector3 _playerPos = playerPos.position;
@@ -103,6 +104,16 @@ public class grabObject : MonoBehaviour
             isGrabable = false;
         }
 
+    }
+
+    void objSpin()
+    {
+        
+        if(Input.GetKeyDown(KeyCode.R))
+        {
+            transform.Rotate(0,90,0,Space.Self);
+            Debug.Log("ëŒì•„ê°");
+        }
     }
 
 
