@@ -40,6 +40,7 @@ public class grabObject : MonoBehaviour
 
 
             myRigid.useGravity = false;
+            myRigid.isKinematic = true;
             myCollider.enabled = false;
 
 
@@ -57,6 +58,7 @@ public class grabObject : MonoBehaviour
         myRigid = GetComponent<Rigidbody>();
 
         myRigid.useGravity = true;
+        myRigid.isKinematic = false;
         myCollider.enabled = true;
         transform.parent = null;
 
