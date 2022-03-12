@@ -32,6 +32,7 @@ public class PlayerMovement : MonoBehaviour
     {
         Jump();
         RotCtrl();
+        RayCast();
     }
 
     void PlayerMove()
@@ -87,5 +88,17 @@ public class PlayerMovement : MonoBehaviour
         // Camera의 transform 컴포넌트의 로컬로테이션의 오일러각에 
         // 현재X축 로테이션을 나타내는 오일러각을 할당해준다.
         playerCam.transform.localEulerAngles = new Vector3(currentRot, 0f, 0f);
+    }
+
+    void RayCast()
+    {
+        RaycastHit hit;
+
+        Debug.DrawRay(transform.position, transform.forward * 8, Color.red);
+        if(Physics.Raycast(transform.position, new Vector3(1,0, Input.GetAxis("Mouse X")), out hit, 4))
+        {
+            Debug.Log(hit.collider.gameObject.name);
+        }
+        
     }
 }
