@@ -7,6 +7,8 @@ public class PlayerMovement : MonoBehaviour
     public Rigidbody playerRigidbody;
     public Camera playerCam;
     public PhysicMaterial PlayerFriction;
+    public Transform theDest;
+    public GameObject rayObject;
 
     float MoveSpeed;
     float rotSpeed;
@@ -21,6 +23,7 @@ public class PlayerMovement : MonoBehaviour
         currentRot = 0f;
         jumpPower = 5.0f;
         isJumping = false;
+        rayObject = null;
     }
 
     private void FixedUpdate()
@@ -92,12 +95,33 @@ public class PlayerMovement : MonoBehaviour
 
     void RayCast()
     {
+        //crosshair가 가리키고 있는 object
         RaycastHit hit;
 
-        Debug.DrawRay(transform.position, transform.forward * 8, Color.red);
-        if(Physics.Raycast(transform.position, new Vector3(1,0, Input.GetAxis("Mouse X")), out hit, 4))
+        Debug.DrawRay(playerCam.transform.position, playerCam.transform.forward * 8, Color.red);
+
+        //raycast에 오브젝트가 충돌했을때
+        if(Physics.Raycast(playerCam.transform.position, playerCam.transform.forward, out hit, 3))
         {
-            Debug.Log(hit.collider.gameObject.name);
+            rayObject = hit.collider.gameObject;
+
+            //오브젝트가 잡을 수 있는 tag라면
+            if (rayObject.tag == "Grabable")
+            {
+                rayObject.GetComponent<grabObject>().isGrabable = true;
+
+                if (Input.GetMouseButtonDown(0))
+                {
+                    //grabObject.cs에서 
+                    rayObject.GetComponent<grabObject>().isGrabing = true;
+                    
+                }
+            }
+            
+        }
+        else
+        {
+            rayObject = null;
         }
         
     }

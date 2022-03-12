@@ -5,103 +5,33 @@ using UnityEngine;
 public class grabObject : MonoBehaviour
 {
     public Transform theDest;
+    public bool isGrabable; //playerMovement.cs 에서 raycast에 충돌했을 때 true
+    public bool isGrabing; //playerMovement.cs 에서 raycast에 충돌했을 때 클릭 시 true
+    
 
     private Rigidbody myRigid;
     private Collider myCollider;
     private MeshRenderer myRenderer;
     private float objDistance;
     private Transform playerPos;
+    
 
-    private bool isGrab;
-    private bool isGrabable;
- 
 
 
     void Start()
     {
-        isGrab = false;
+        isGrabing = false;
+        isGrabable = false;
         playerPos = GameObject.FindWithTag("Player").transform;
+        
     }
 
     void Update()
     {
-        isGrab = Input.GetMouseButton(0);
-        distanceCulculate();
         objSpin();
-    }
-
-
-    void OnMouseDown()
-    {
-        if(isGrabable)
-        {
-            myRigid = GetComponent<Rigidbody>();
-            myCollider = GetComponent<Collider>();
-
-
-            myRigid.useGravity = false;
-            myCollider.enabled = false;
-
-
-            transform.position = theDest.position;
-            transform.parent = GameObject.Find("The Dest").transform;
-        }
-        
-
-        
-    }
-    
-
-    void OnMouseUp()
-    {
-        myRigid = GetComponent<Rigidbody>();
-
-        myRigid.useGravity = true;
-        myCollider.enabled = true;
-        transform.parent = null;
-
-        isGrab = false;
-    }
-
-    void OnMouseOver()
-    {
-        myRenderer = GetComponent<MeshRenderer>();
-
-        if ((!isGrab)&&(isGrabable))
-        {
-            myRenderer.material.color = new Color(1, 0, 0);
-        }
-
-        if(!isGrabable)
-        {
-            myRenderer.material.color = new Color(1, 1, 1);
-        }
-
-        
-    }
-
-    void OnMouseExit()
-    {
-        myRenderer.material.color = new Color(1, 1, 1);
-    }
-
-   
-    void distanceCulculate()
-    {
-        Vector3 _objPos = transform.position;
-        Vector3 _playerPos = playerPos.position;
-        objDistance = Vector3.Distance(_objPos, _playerPos);
-
-        if (objDistance <= 3.0f)
-        {
-            isGrabable = true;
-        }
-        else
-        {
-            isGrabable = false;
-        }
-
-    }
+        RayCollide();
+        HighlightObj();
+    }   
 
     void objSpin()
     {
@@ -113,7 +43,78 @@ public class grabObject : MonoBehaviour
         }
     }
 
-    
+    //오브젝트와 playerMovement의 rayCast가 충돌 시 호출
+    void RayCollide()
+    {
+        if(isGrabing)
+        {
+            isGrabing = Input.GetMouseButton(0);
+
+            myRigid = GetComponent<Rigidbody>();
+            myCollider = GetComponent<Collider>();
+
+            myRigid.useGravity = false;
+            myCollider.enabled = false;
+
+            transform.position = theDest.position;
+            transform.parent = GameObject.Find("The Dest").transform;
+        }
+
+        else
+        {
+            myRigid = GetComponent<Rigidbody>();
+            myCollider = GetComponent<Collider>();
+
+            myRigid.useGravity = true;
+            myCollider.enabled = true;
+
+            transform.parent = null;
+        }
+
+    }
+
+    //오브젝트와 playerMovement의 rayCast가 충돌 시 호출
+    void HighlightObj()
+    {
+        isGrabable = IsInRay();
+        myRenderer = GetComponent<MeshRenderer>();
+        myRenderer.material.color = new Color(1, 1, 1);
+
+        if(isGrabable)
+        {
+            myRenderer = GetComponent<MeshRenderer>();
+
+            myRenderer.material.color = new Color(1, 0, 0);
+        }
+    }    
+
+    bool IsInRay()
+    {
+        if(isGrabing)
+        {
+            return false;
+        }
+
+        GameObject rayObj = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().rayObject;
+        if(rayObj==null)
+        {
+            return false;
+        }
+
+        //PlayerMovement.cs에서 raycast에 충돌한 obj가 this.object일 경우 object가 highlight된다
+        if(rayObj.name == this.name)
+        {
+            return true;
+        }
+
+        else
+        {
+            return false;
+
+        }
+    }
+
+
 
 
 }
