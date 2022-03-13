@@ -142,6 +142,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   theDest: {fileID: 1279789297}
+  isGrabable: 0
+  isGrabing: 0
 --- !u!54 &32299126
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -257,6 +259,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   theDest: {fileID: 1279789297}
+  isGrabable: 0
+  isGrabing: 0
+--- !u!114 &383268087
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 383268080}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12186fabdb91643189c1f40db9cd8ce3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  theDest: {fileID: 0}
+  isGrabable: 0
+  isGrabing: 0
 --- !u!1001 &522500236
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -267,6 +286,10 @@ PrefabInstance:
     - target: {fileID: 1366728840615246, guid: 86163d1770fbaff47bad63dfc78a24b8, type: 3}
       propertyPath: m_Name
       value: Wast_Gas_Can
+      objectReference: {fileID: 0}
+    - target: {fileID: 1366728840615246, guid: 86163d1770fbaff47bad63dfc78a24b8, type: 3}
+      propertyPath: m_TagString
+      value: Grabable
       objectReference: {fileID: 0}
     - target: {fileID: 4785949350272390, guid: 86163d1770fbaff47bad63dfc78a24b8, type: 3}
       propertyPath: m_RootOrder
@@ -715,6 +738,27 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1026678061 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1435397636721800, guid: b4d0d3252571eb9468266301b65df7d2,
+    type: 3}
+  m_PrefabInstance: {fileID: 938426968}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1026678063
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1026678061}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12186fabdb91643189c1f40db9cd8ce3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  theDest: {fileID: 1279789297}
+  isGrabable: 0
+  isGrabing: 0
 --- !u!1 &1161479426
 GameObject:
   m_ObjectHideFlags: 0
@@ -1119,6 +1163,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   theDest: {fileID: 0}
+  isGrabable: 0
+  isGrabing: 0
 --- !u!54 &1509428480
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1209,6 +1255,10 @@ PrefabInstance:
     - target: {fileID: 1169914560187858, guid: 5601e4117dbe1c84a8407c3604a42a0a, type: 3}
       propertyPath: m_Name
       value: Wast_Chest
+      objectReference: {fileID: 0}
+    - target: {fileID: 1169914560187858, guid: 5601e4117dbe1c84a8407c3604a42a0a, type: 3}
+      propertyPath: m_TagString
+      value: Grabable
       objectReference: {fileID: 0}
     - target: {fileID: 4523378107808598, guid: 5601e4117dbe1c84a8407c3604a42a0a, type: 3}
       propertyPath: m_RootOrder
@@ -1302,6 +1352,8 @@ MonoBehaviour:
   playerRigidbody: {fileID: 1834166126}
   playerCam: {fileID: 1993320030}
   PlayerFriction: {fileID: 13400000, guid: 0ba332264e70ada4491af34d54c2f013, type: 2}
+  theDest: {fileID: 0}
+  rayObject: {fileID: 0}
 --- !u!54 &1834166126
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1650,3 +1702,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &2145194363
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2145194356}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12186fabdb91643189c1f40db9cd8ce3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  theDest: {fileID: 0}
+  isGrabable: 0
+  isGrabing: 0
