@@ -5,6 +5,7 @@ using UnityEngine;
 public class grabObject : MonoBehaviour
 {
     public Transform theDest;
+
     public bool isGrabable; //playerMovement.cs 에서 raycast에 충돌했을 때 true
     public bool isGrabing; //playerMovement.cs 에서 raycast에 충돌했을 때 클릭 시 true
     public Rigidbody myRigid;
@@ -15,8 +16,10 @@ public class grabObject : MonoBehaviour
 
 
 
+
     void Start()
     {
+
         isGrabing = false;
         isGrabable = false;
         playerPos = GameObject.FindWithTag("Player").transform;
@@ -25,6 +28,8 @@ public class grabObject : MonoBehaviour
 
     void Update()
     {
+
+
         objSpin();
         RayCollide();
         HighlightObj();
@@ -107,9 +112,9 @@ public class grabObject : MonoBehaviour
         {
             return false;
 
+
         }
     }
-
 
 
 
