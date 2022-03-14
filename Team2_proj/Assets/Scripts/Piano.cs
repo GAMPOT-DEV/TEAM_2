@@ -29,7 +29,7 @@ public class Piano : grabObject
         if(isClicked)
         {
             Debug.Log(piano.name);
-            piano.GetComponent<PianoUI>().isUiOn = true;
+            piano.GetComponent<PianoUI>().gameObject.SetActive(true);
             Debug.Log("피아노가 클릭됨");
             isClicked = false;
         }
