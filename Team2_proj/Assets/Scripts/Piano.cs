@@ -5,13 +5,14 @@ using UnityEngine;
 public class Piano : grabObject
 {
     public bool isClicked;
+    private GameObject piano;
     // Start is called before the first frame update
     void Start()
     {
         isGrabing = false;
         isGrabable = false;
         playerPos = GameObject.FindWithTag("Player").transform;
-        
+        piano = GameObject.FindWithTag("PianoUI");
     }
 
     // Update is called once per frame
@@ -27,6 +28,8 @@ public class Piano : grabObject
     {
         if(isClicked)
         {
+            Debug.Log(piano.name);
+            piano.GetComponent<PianoUI>().isUiOn = true;
             Debug.Log("피아노가 클릭됨");
             isClicked = false;
         }
