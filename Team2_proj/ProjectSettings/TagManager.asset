@@ -6,6 +6,9 @@ TagManager:
   tags:
   - floor
   - GrabDest
+  - Grabable
+  - PianoUI
+
   layers:
   - Default
   - TransparentFX
