@@ -7,13 +7,10 @@ public class grabObject : MonoBehaviour
     public Transform theDest;
     public bool isGrabable; //playerMovement.cs 에서 raycast에 충돌했을 때 true
     public bool isGrabing; //playerMovement.cs 에서 raycast에 충돌했을 때 클릭 시 true
-    
-
-    private Rigidbody myRigid;
-    private Collider myCollider;
-    private MeshRenderer myRenderer;
-    private float objDistance;
-    private Transform playerPos;
+    public Rigidbody myRigid;
+    public Collider myCollider;
+    public MeshRenderer myRenderer;
+    public Transform playerPos;
     
 
 
@@ -39,12 +36,11 @@ public class grabObject : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.R))
         {
             transform.Rotate(0,90,0,Space.Self);
-            Debug.Log("돌아감");
         }
     }
 
     //오브젝트와 playerMovement의 rayCast가 충돌 시 호출
-    void RayCollide()
+    public void RayCollide()
     {
         if(isGrabing)
         {
@@ -74,7 +70,7 @@ public class grabObject : MonoBehaviour
     }
 
     //오브젝트와 playerMovement의 rayCast가 충돌 시 호출
-    void HighlightObj()
+    public void HighlightObj()
     {
         isGrabable = IsInRay();
         myRenderer = GetComponent<MeshRenderer>();
@@ -88,7 +84,7 @@ public class grabObject : MonoBehaviour
         }
     }    
 
-    bool IsInRay()
+    public bool IsInRay()
     {
         if(isGrabing)
         {

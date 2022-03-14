@@ -117,6 +117,15 @@ public class PlayerMovement : MonoBehaviour
                     
                 }
             }
+            //피아노를 클릭했을 경우 피아노 스크립트 실행
+            else if(rayObject.name == "Piano")
+            {
+                if(Input.GetMouseButtonDown(0))
+                {
+                    rayObject.GetComponent<Piano>().isClicked = true;
+                }
+                
+            }
             
         }
         else
