@@ -101,7 +101,7 @@ public class PlayerMovement : MonoBehaviour
         Debug.DrawRay(playerCam.transform.position, playerCam.transform.forward * 8, Color.red);
 
         //raycast에 오브젝트가 충돌했을때
-        if(Physics.Raycast(playerCam.transform.position, playerCam.transform.forward, out hit, 3))
+        if (Physics.Raycast(playerCam.transform.position, playerCam.transform.forward, out hit, 3))
         {
             rayObject = hit.collider.gameObject;
 
@@ -114,7 +114,7 @@ public class PlayerMovement : MonoBehaviour
                 {
                     //grabObject.cs에서 
                     rayObject.GetComponent<grabObject>().isGrabing = true;
-                    
+
                 }
             }
 
@@ -129,7 +129,7 @@ public class PlayerMovement : MonoBehaviour
                     rayObject.GetComponent<FindWrongPicture>().isFocus = true;
                     rayObject.GetComponent<FindWrongPicture>().localPoint = v3LocalPoint;
                 }
-           
+
             }
 
             //피아노를 클릭했을 경우 피아노 스크립트 실행
@@ -141,10 +141,11 @@ public class PlayerMovement : MonoBehaviour
                 }
 
             }
-            
+
         }
         else
         {
             rayObject = null;
+        }
     }
 }
