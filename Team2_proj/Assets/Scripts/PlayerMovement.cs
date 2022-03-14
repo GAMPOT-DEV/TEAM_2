@@ -146,6 +146,5 @@ public class PlayerMovement : MonoBehaviour
         else
         {
             rayObject = null;
-        } 
     }
 }
