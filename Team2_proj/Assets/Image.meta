@@ -1,7 +1,12 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Team2_proj/Assets/Image.meta
 guid: 7065e3453b4400b48981f7be8180aaf8
 folderAsset: yes
 DefaultImporter:
+=======
+guid: 3f3109c46b2dd184ba272df85af19496
+TextScriptImporter:
+>>>>>>> 1bd3b087547fafe9caf3bc6d3b7dfd9be4f7d37c:Team2_proj/Assets/Scripts/새 텍스트 문서.txt.meta
   externalObjects: {}
   userData: 
   assetBundleName: 
