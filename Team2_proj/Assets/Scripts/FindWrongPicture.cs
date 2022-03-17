@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class FindWrongPicture : MonoBehaviour
 {
+    public Animation anim;
     public bool isFocus;
     public Vector3 localPoint;
+    bool flag = false;
 
     private void Start()
     {
@@ -26,8 +28,12 @@ public class FindWrongPicture : MonoBehaviour
         {
             if (Input.GetMouseButtonDown(0))
             {
-                //임시로 log만 띄움
-                Debug.Log("Quiz Sloved!!");
+                if (flag == false)
+                {
+                    anim = gameObject.GetComponent<Animation>();
+                    anim.Play("Quiz1");
+                    flag = true;
+                }
             }
         }
         isFocus = false;
