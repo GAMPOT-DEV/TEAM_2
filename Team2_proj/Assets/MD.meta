@@ -1,6 +1,10 @@
 fileFormatVersion: 2
-guid: 6f902f6da7cd4cf40a713a481df92311
+<<<<<<<< HEAD:Team2_proj/Assets/Wasteland Cabin/Show.unity.meta
+guid: 09c73d1f625a05b4cb0e8aadb72e430f
+========
+guid: b81e78f988efefe408ba03cb09a1c5ae
 folderAsset: yes
+>>>>>>>> YJ:Team2_proj/Assets/MD.meta
 DefaultImporter:
   externalObjects: {}
   userData: 

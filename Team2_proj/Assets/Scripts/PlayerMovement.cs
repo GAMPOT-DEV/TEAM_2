@@ -117,6 +117,21 @@ public class PlayerMovement : MonoBehaviour
                     
                 }
             }
+
+            //오브젝트가 틀린그림찾기 이미지면 발생
+            if (rayObject.name == "picture")
+            {
+                //월드 좌표를 로컬 좌표로 변환
+                if (Physics.Raycast(transform.position, -Vector3.up, 100))
+                {
+                    Vector3 v3LocalPoint = hit.transform.InverseTransformPoint(hit.point);
+                    //Debug.Log(hit.point.y);
+                    rayObject.GetComponentInParent<FindWrongPicture>().isFocus = true;
+                    rayObject.GetComponentInParent<FindWrongPicture>().localPoint = v3LocalPoint;
+                }
+           
+            }
+
             //피아노를 클릭했을 경우 피아노 스크립트 실행
             else if(rayObject.name == "Piano")
             {
@@ -131,7 +146,6 @@ public class PlayerMovement : MonoBehaviour
         else
         {
             rayObject = null;
-        }
-        
+        } 
     }
 }
