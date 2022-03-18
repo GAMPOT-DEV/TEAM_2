@@ -5,22 +5,32 @@ using UnityEngine;
 public class Piano : grabObject
 {
     public bool isClicked;
-    private GameObject piano;
+    public GameObject piano;
+    public Transform setDest;
+
+    private GameObject player;
+
     // Start is called before the first frame update
     void Start()
     {
         isGrabing = false;
         isGrabable = false;
-        playerPos = GameObject.FindWithTag("Player").transform;
-        piano = GameObject.FindWithTag("PianoUI");
+        player = GameObject.FindWithTag("Player");
+        playerPos = player.transform;
+
+        piano = GameObject.Find("big xylophone");
+        piano.SetActive(false);
+
+
     }
 
     // Update is called once per frame
     void Update()
     {
         RayCollide();
-        HighlightObj();
+        HighlightPuzzle();
         ShowPiano();
+        ExitGame();
     }
 
     
@@ -28,11 +38,36 @@ public class Piano : grabObject
     {
         if(isClicked)
         {
-            Debug.Log(piano.name);
-            piano.GetComponent<PianoUI>().gameObject.SetActive(true);
-            Debug.Log("피아노가 클릭됨");
+            Camera playerCam = player.GetComponent<PlayerMovement>().playerCam;
+
+            //플레이어를 실로폰 앞으로 옮긴 후, big sylophone 생성, 위치&카메라 방향 고정
+            playerPos.position = setDest.position;
+            playerPos.transform.rotation = Quaternion.Euler(new Vector3(0, 90, 0));
+            playerCam.transform.localEulerAngles = new Vector3(60f, 0f, 0f);
+
+            player.GetComponent<PlayerMovement>().isMoveable = false;
+
+            //원래 실로폰 투명화
+            this.transform.GetChild(1).GetComponent<Renderer>().enabled = false;
+
+            piano.SetActive(true);
+
             isClicked = false;
         }
         
+    }
+
+
+
+    //ESC를 누르면 퍼즐에서 나감
+    void ExitGame()
+    {
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            player.GetComponent<PlayerMovement>().isMoveable = true;
+            this.transform.GetChild(1).GetComponent<Renderer>().enabled = true;
+
+            piano.SetActive(false);
+        }
     }
 }
