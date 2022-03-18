@@ -8,7 +8,7 @@ TagManager:
   - GrabDest
   - Grabable
   - PianoUI
-
+  - Puzzle
   layers:
   - Default
   - TransparentFX

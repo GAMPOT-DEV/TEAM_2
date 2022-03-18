@@ -19,7 +19,6 @@ public class Piano : grabObject
     void Update()
     {
         RayCollide();
-        HighlightObj();
         ShowPiano();
     }
 

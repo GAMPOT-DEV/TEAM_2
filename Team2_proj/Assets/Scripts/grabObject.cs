@@ -8,6 +8,7 @@ public class grabObject : MonoBehaviour
 
     public bool isGrabable; //playerMovement.cs 에서 raycast에 충돌했을 때 true
     public bool isGrabing; //playerMovement.cs 에서 raycast에 충돌했을 때 클릭 시 true
+    public bool isPuzzle;
     public Rigidbody myRigid;
     public Collider myCollider;
     public MeshRenderer myRenderer;
@@ -22,6 +23,7 @@ public class grabObject : MonoBehaviour
 
         isGrabing = false;
         isGrabable = false;
+        isPuzzle = false;
         playerPos = GameObject.FindWithTag("Player").transform;
         
     }
@@ -87,7 +89,25 @@ public class grabObject : MonoBehaviour
 
             myRenderer.material.color = new Color(1, 0, 0);
         }
-    }    
+    }
+
+    //raycast와 충돌한 오브젝트가 퍼즐일 경우 호출
+    //퍼즐마다 meshrenderer가 다르기 때문에 추가로 함수를 만듦
+    public void HighlightPuzzle(GameObject gameObj)
+    {
+        if(gameObj.name == "picture")
+        {
+
+        }
+
+        else if(gameObj.name == "xylophone")
+        {
+            transform.GetChild(1).GetComponent<MeshRenderer>().material.color = new Color(0, 1, 0);
+        }
+
+        //여기에 퍼즐 추가
+
+    }
 
     public bool IsInRay()
     {
