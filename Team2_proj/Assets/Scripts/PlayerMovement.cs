@@ -9,12 +9,14 @@ public class PlayerMovement : MonoBehaviour
     public PhysicMaterial PlayerFriction;
     public Transform theDest;
     public GameObject rayObject;
+    public bool isMoveable;
 
     float MoveSpeed;
     float rotSpeed;
     float currentRot;
     float jumpPower;
     bool isJumping;
+    
 
     void Start()
     {
@@ -24,18 +26,27 @@ public class PlayerMovement : MonoBehaviour
         jumpPower = 5.0f;
         isJumping = false;
         rayObject = null;
+        isMoveable = true;
     }
 
     private void FixedUpdate()
     {
-        PlayerMove();
+        if(isMoveable)
+        {
+            PlayerMove();
+        }
+        
     }
 
     void Update()
     {
-        Jump();
-        RotCtrl();
-        RayCast();
+        if(isMoveable)
+        {
+            Jump();
+            RotCtrl();
+            RayCast();
+        }
+
     }
 
     void PlayerMove()
@@ -118,7 +129,7 @@ public class PlayerMovement : MonoBehaviour
                 }
             }
 
-            //오브젝트 태그가 puzzle이면 isPuzzle이 참이 되고
+            //퍼즐별 수행할 함수
             else if(rayObject.tag == "Puzzle")
             {
                 rayObject.GetComponent<grabObject>().isPuzzle = true;

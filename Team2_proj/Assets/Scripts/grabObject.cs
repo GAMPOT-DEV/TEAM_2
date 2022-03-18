@@ -5,7 +5,6 @@ using UnityEngine;
 public class grabObject : MonoBehaviour
 {
     public Transform theDest;
-
     public bool isGrabable; //playerMovement.cs 에서 raycast에 충돌했을 때 true
     public bool isGrabing; //playerMovement.cs 에서 raycast에 충돌했을 때 클릭 시 true
     public bool isPuzzle;
@@ -13,6 +12,8 @@ public class grabObject : MonoBehaviour
     public Collider myCollider;
     public MeshRenderer myRenderer;
     public Transform playerPos;
+
+    
     
 
 
@@ -25,6 +26,7 @@ public class grabObject : MonoBehaviour
         isGrabable = false;
         isPuzzle = false;
         playerPos = GameObject.FindWithTag("Player").transform;
+
         
     }
 
@@ -35,6 +37,7 @@ public class grabObject : MonoBehaviour
         objSpin();
         RayCollide();
         HighlightObj();
+        HighlightPuzzle();
     }   
 
     void objSpin()
@@ -87,23 +90,21 @@ public class grabObject : MonoBehaviour
         {
             myRenderer = GetComponent<MeshRenderer>();
 
-            myRenderer.material.color = new Color(1, 0, 0);
+            myRenderer.material.color = Color.yellow * 0.7f;
         }
     }
 
     //raycast와 충돌한 오브젝트가 퍼즐일 경우 호출
-    //퍼즐마다 meshrenderer가 다르기 때문에 추가로 함수를 만듦
-    public void HighlightPuzzle(GameObject gameObj)
+    //기본 crosshair을 돋보기로 바꿈
+    public void HighlightPuzzle()
     {
-        if(gameObj.name == "picture")
+        isPuzzle = IsInRay();
+
+        if (isPuzzle)
         {
 
         }
-
-        else if(gameObj.name == "xylophone")
-        {
-            transform.GetChild(1).GetComponent<MeshRenderer>().material.color = new Color(0, 1, 0);
-        }
+        
 
         //여기에 퍼즐 추가
 

@@ -7,7 +7,6 @@ TagManager:
   - floor
   - GrabDest
   - Grabable
-  - PianoUI
   - Puzzle
   layers:
   - Default
