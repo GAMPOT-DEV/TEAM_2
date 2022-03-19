@@ -27,13 +27,10 @@ public class grabObject : MonoBehaviour
         isPuzzle = false;
         playerPos = GameObject.FindWithTag("Player").transform;
 
-        
     }
 
     void Update()
     {
-
-
         objSpin();
         RayCollide();
         HighlightObj();
@@ -102,7 +99,7 @@ public class grabObject : MonoBehaviour
 
         if (isPuzzle)
         {
-
+            
         }
         
 
