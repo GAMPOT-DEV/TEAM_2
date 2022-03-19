@@ -10,15 +10,15 @@ public class SoundC : SolvePiano
     {
         Init();
         chordsNum = 1;
-        noteCount = 0;
     }
 
     void OnMouseDown()
     {
+
         noteCount = gameObject.transform.parent.GetComponent<SolvePiano>().noteCount;
         Note_C.Play();
         Test();
         gameObject.transform.parent.GetComponent<SolvePiano>().noteCount = noteCount;
-        
+
     }
 }

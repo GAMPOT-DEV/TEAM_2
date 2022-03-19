@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class SoundE : SolvePiano
 {
-    // Start is called before the first frame update
     public AudioSource Note_E;
 
     void Start()
@@ -19,5 +18,7 @@ public class SoundE : SolvePiano
         Note_E.Play();
         Test();
         gameObject.transform.parent.GetComponent<SolvePiano>().noteCount = noteCount;
+
+        
     }
 }

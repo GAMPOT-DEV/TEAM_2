@@ -62,12 +62,22 @@ public class Piano : grabObject
     //ESC를 누르면 퍼즐에서 나감
     void ExitGame()
     {
+        //ESC로 나갈 때
         if(Input.GetKeyDown(KeyCode.Escape))
         {
             player.GetComponent<PlayerMovement>().isMoveable = true;
             this.transform.GetChild(1).GetComponent<Renderer>().enabled = true;
 
             piano.SetActive(false);
+        }
+        
+        //퍼즐이 풀렸을 때, 태그를 puzzle->solved puzzle로 변경, 다시 퍼즐을 실행 못함
+        else if(piano.GetComponent<SolvePiano>().isClear)
+        {
+            player.GetComponent<PlayerMovement>().isMoveable = true;
+            this.transform.GetChild(1).GetComponent<Renderer>().enabled = true;
+            piano.SetActive(false);
+            transform.tag = "Solved Puzzle";
         }
     }
 }

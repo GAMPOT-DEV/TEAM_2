@@ -19,5 +19,6 @@ public class SoundF : SolvePiano
         Note_F.Play();
         Test();
         gameObject.transform.parent.GetComponent<SolvePiano>().noteCount = noteCount;
+
     }
 }

@@ -19,5 +19,6 @@ public class SoundHighA : SolvePiano
         Note_HighA.Play();
         Test();
         gameObject.transform.parent.GetComponent<SolvePiano>().noteCount = noteCount;
+        gameObject.transform.parent.GetComponent<SolvePiano>().isClear = isClear;
     }
 }

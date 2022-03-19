@@ -8,25 +8,20 @@ public class SolvePiano : MonoBehaviour
     public int[] songArr;
     public int[] playerArr;
     public int noteCount;
-    public int testint;
-
-    private bool isClear;
-
-
+    public bool isClear;
 
     public void Init()
     {
         songArr = new int[7] { 6, 5, 4, 5, 6, 6, 6 };
         playerArr = new int[7] { 0, 0, 0, 0, 0, 0, 0 };
         noteCount = 0;
-        testint = 0;
         isClear = false;
     }
 
     public void Test()
     {
-        testint++;
         Debug.Log(noteCount);
+
         if (!isClear)
         {
             if (songArr[noteCount] == chordsNum)
@@ -57,6 +52,8 @@ public class SolvePiano : MonoBehaviour
         {
             isClear = true;
             Debug.Log("puzzle is solved");
+            noteCount = 0;
         }
+
     }
 }
