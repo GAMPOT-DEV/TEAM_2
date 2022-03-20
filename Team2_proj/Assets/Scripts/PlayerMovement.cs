@@ -162,7 +162,6 @@ public class PlayerMovement : MonoBehaviour
                 
             }
 
-
             if(rayObject.name == "PillTest")
             {
                 /*if(rayObject.GetComponent<PillQuiz>().isGrabing == true)
@@ -171,7 +170,7 @@ public class PlayerMovement : MonoBehaviour
                 }*/
             }
             
-
+    
         }
         else
         {
