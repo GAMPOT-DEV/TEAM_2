@@ -142,6 +142,17 @@ public class PlayerMovement : MonoBehaviour
 
             }
 
+<<<<<<< Updated upstream
+=======
+            if(rayObject.name == "PillTest")
+            {
+                /*if(rayObject.GetComponent<PillQuiz>().isGrabing == true)
+                {
+                    rayObject.GetComponent<PillQuiz>().ChangePillPosition();
+                }*/
+            }
+            
+>>>>>>> Stashed changes
         }
         else
         {
