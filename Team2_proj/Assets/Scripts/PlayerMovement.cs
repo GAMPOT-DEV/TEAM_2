@@ -162,8 +162,16 @@ public class PlayerMovement : MonoBehaviour
                 
             }
 
+
+            if(rayObject.name == "PillTest")
+            {
+                /*if(rayObject.GetComponent<PillQuiz>().isGrabing == true)
+                {
+                    rayObject.GetComponent<PillQuiz>().ChangePillPosition();
+                }*/
+            }
             
-            
+
         }
         else
         {
