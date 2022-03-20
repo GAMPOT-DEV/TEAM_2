@@ -17,10 +17,7 @@ public class CrossHair : MonoBehaviour
         
     }
 
-    private void Update()
-    {
-        Debug.Log(curImg);
-    }
+   
 
     /*public void ChangeImage()
     {

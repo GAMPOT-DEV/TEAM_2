@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657838, g: 0.49641234, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -218,8 +218,8 @@ GameObject:
   - component: {fileID: 55523722}
   - component: {fileID: 55523721}
   - component: {fileID: 55523720}
-  - component: {fileID: 55523719}
   - component: {fileID: 55523718}
+  - component: {fileID: 55523719}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -252,7 +252,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 55523717}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8d67d9304923f46478129290bb462d40, type: 3}
+  m_Script: {fileID: 11500000, guid: c3234bbe8b6e10742ab57260af4032fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   playerRigidbody: {fileID: 55523718}
@@ -260,6 +260,7 @@ MonoBehaviour:
   PlayerFriction: {fileID: 13400000, guid: 0ba332264e70ada4491af34d54c2f013, type: 2}
   theDest: {fileID: 479056961}
   rayObject: {fileID: 0}
+  isMoveable: 0
 --- !u!136 &55523720
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -427,15 +428,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95167424e37650c4db7826092314a48e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  theDest: {fileID: 479056961}
-  isGrabable: 0
-  isGrabing: 0
-  myRigid: {fileID: 0}
-  myCollider: {fileID: 0}
-  myRenderer: {fileID: 0}
-  playerPos: {fileID: 0}
-  isClicked: 0
-  pillBottle: {fileID: 69330692}
 --- !u!1 &89355781
 GameObject:
   m_ObjectHideFlags: 0
@@ -1182,6 +1174,7 @@ MonoBehaviour:
   theDest: {fileID: 479056961}
   isGrabable: 0
   isGrabing: 0
+  isPuzzle: 0
   myRigid: {fileID: 0}
   myCollider: {fileID: 0}
   myRenderer: {fileID: 0}
@@ -1863,6 +1856,7 @@ MonoBehaviour:
   theDest: {fileID: 479056961}
   isGrabable: 0
   isGrabing: 0
+  isPuzzle: 0
   myRigid: {fileID: 0}
   myCollider: {fileID: 0}
   myRenderer: {fileID: 0}

@@ -132,7 +132,6 @@ public class PlayerMovement : MonoBehaviour
             //퍼즐별 수행할 함수
             else if(rayObject.tag == "Puzzle")
             {
-                rayObject.GetComponent<grabObject>().isPuzzle = true;
 
                 //틀린그림찾기
                 if (rayObject.name == "picture")
