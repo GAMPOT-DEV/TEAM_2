@@ -28,7 +28,7 @@ public class SolvePiano : MonoBehaviour
             {
                 playerArr[noteCount] = chordsNum;
                 noteCount++;
-                //Debug.Log("¸ÂÀ½");
+                //Debug.Log("ï¿½ï¿½ï¿½ï¿½");
             }
 
             else
@@ -42,7 +42,7 @@ public class SolvePiano : MonoBehaviour
                 {
                     noteCount = 0;
                     playerArr = new int[7] { 0, 0, 0, 0, 0, 0, 0 };
-                    //Debug.Log("Æ²¸²");
+                    //Debug.Log("Æ²ï¿½ï¿½");
                 }
 
             }

@@ -27,6 +27,7 @@ public class grabObject : MonoBehaviour
         isPuzzle = false;
         playerPos = GameObject.FindWithTag("Player").transform;
 
+        
     }
 
     void Update()
@@ -99,7 +100,6 @@ public class grabObject : MonoBehaviour
 
         if (isPuzzle)
         {
-            
         }
         
 

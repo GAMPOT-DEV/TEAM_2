@@ -14,11 +14,9 @@ public class SoundC : SolvePiano
 
     void OnMouseDown()
     {
-
         noteCount = gameObject.transform.parent.GetComponent<SolvePiano>().noteCount;
         Note_C.Play();
         Test();
         gameObject.transform.parent.GetComponent<SolvePiano>().noteCount = noteCount;
-
     }
 }
