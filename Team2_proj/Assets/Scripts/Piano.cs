@@ -27,7 +27,7 @@ public class Piano : grabObject
     // Update is called once per frame
     void Update()
     {
-        RayCollide();
+        
         HighlightPuzzle();
         ShowPiano();
         ExitGame();
