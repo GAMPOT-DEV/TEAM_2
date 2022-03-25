@@ -7,6 +7,7 @@ public class UIManager : MonoBehaviour
     public GameObject PausePanel;
     public GameObject ReportPanel;
     public GameObject MedicinePanel;
+    public GameObject PianoPanel;
 
     public Camera playerCam;
     public GameObject rayObject;
@@ -16,6 +17,7 @@ public class UIManager : MonoBehaviour
         PausePanel.SetActive(false);
         ReportPanel.SetActive(false);
         MedicinePanel.SetActive(false);
+        PianoPanel.SetActive(false);
         rayObject = null;
     }
 
@@ -62,16 +64,16 @@ public class UIManager : MonoBehaviour
 
     void RayCast()
     {
-        //crosshair°¡ °¡¸®Å°°í ÀÖ´Â object
+        //crosshairï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Å°ï¿½ï¿½ ï¿½Ö´ï¿½ object
         RaycastHit hit;
 
         Debug.DrawRay(playerCam.transform.position, playerCam.transform.forward * 8, Color.red);
 
-        //raycast¿¡ ¿ÀºêÁ§Æ®°¡ Ãæµ¹ÇßÀ»¶§
+        //raycastï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½æµ¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         if (Physics.Raycast(playerCam.transform.position, playerCam.transform.forward, out hit, 3))
         {
             rayObject = hit.collider.gameObject;
-            Debug.Log(rayObject.name);
+            //Debug.Log(rayObject.name);
 
             if(rayObject.name == "report" && Input.GetMouseButtonDown(0))
             {
@@ -84,7 +86,7 @@ public class UIManager : MonoBehaviour
                     //ReportPanel.SetActive(false);
             }
 
-            if(rayObject.name == "prescription") //Ã³¹æÀü
+            if(rayObject.name == "prescription") //Ã³ï¿½ï¿½ï¿½ï¿½
             {
                 Time.timeScale = 1f;
                 MedicinePanel.SetActive(true);

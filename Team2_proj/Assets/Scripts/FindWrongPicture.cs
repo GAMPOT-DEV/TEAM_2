@@ -23,13 +23,15 @@ public class FindWrongPicture : MonoBehaviour
 
     public void SolveQuiz(Vector3 localPoint)
     {
-        //Æ²¸° ºÎºÐ¿¡ ÇØ´çÇÏ´Â ÁÂÇ¥¿¡ raycast°¡ Ãæµ¹ÇÑ »óÅÂ·Î ¸¶¿ì½º ¿ÞÂÊ Å¬¸¯À» ÇÏ¸é ÀÌº¥Æ® ¹ß»ý
+        //Æ²ï¿½ï¿½ ï¿½ÎºÐ¿ï¿½ ï¿½Ø´ï¿½ï¿½Ï´ï¿½ ï¿½ï¿½Ç¥ï¿½ï¿½ raycastï¿½ï¿½ ï¿½æµ¹ï¿½ï¿½ ï¿½ï¿½ï¿½Â·ï¿½ ï¿½ï¿½ï¿½ì½º ï¿½ï¿½ï¿½ï¿½ Å¬ï¿½ï¿½ï¿½ï¿½ ï¿½Ï¸ï¿½ ï¿½Ìºï¿½Æ® ï¿½ß»ï¿½
         if((localPoint.x <= 0.44 && localPoint.x >= 0.39)  && (localPoint.y >= 0.06 && localPoint.y <= 0.13))
         {
             if (Input.GetMouseButtonDown(0))
             {
+                
                 if (flag == false)
                 {
+                    Debug.Log("í‹€ë¦°ê·¸ë¦¼ì°¾ê¸° solved");
                     anim = gameObject.GetComponent<Animation>();
                     anim.Play("Quiz1");
                     flag = true;

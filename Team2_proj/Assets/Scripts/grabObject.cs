@@ -13,6 +13,12 @@ public class grabObject : MonoBehaviour
     public MeshRenderer myRenderer;
     public Transform playerPos;
 
+    
+    
+
+
+
+
     void Start()
     {
 
@@ -21,6 +27,7 @@ public class grabObject : MonoBehaviour
         isPuzzle = false;
         playerPos = GameObject.FindWithTag("Player").transform;
 
+        
     }
 
     void Update()
@@ -28,7 +35,6 @@ public class grabObject : MonoBehaviour
         objSpin();
         RayCollide();
         HighlightObj();
-        HighlightPuzzle();
     }   
 
     void objSpin()
@@ -85,22 +91,6 @@ public class grabObject : MonoBehaviour
         }
     }
 
-    //raycast와 충돌한 오브젝트가 퍼즐일 경우 호출
-    //기본 crosshair을 돋보기로 바꿈
-    public void HighlightPuzzle()
-    {
-        isPuzzle = IsInRay();
-
-        if (isPuzzle)
-        {
-            
-        }
-        
-
-        //여기에 퍼즐 추가
-
-    } //-> crosshair로
-
     public bool IsInRay()
     {
         if(isGrabing)
@@ -127,4 +117,7 @@ public class grabObject : MonoBehaviour
 
         }
     }
+
+
+
 }

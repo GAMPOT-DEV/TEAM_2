@@ -8,7 +8,7 @@ TagManager:
   - GrabDest
   - Grabable
   - Puzzle
-  - Solved Puzzle
+  - SolvedPuzzle
   layers:
   - Default
   - TransparentFX
