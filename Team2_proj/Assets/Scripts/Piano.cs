@@ -25,8 +25,6 @@ public class Piano : grabObject
     // Update is called once per frame
     void Update()
     {
-        
-        HighlightPuzzle();
         ShowPiano();
         ExitGame();
     }
