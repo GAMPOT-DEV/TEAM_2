@@ -7,6 +7,7 @@ public class UIManager : MonoBehaviour
     public GameObject PausePanel;
     public GameObject ReportPanel;
     public GameObject MedicinePanel;
+    public GameObject PianoPanel;
 
     public Camera playerCam;
     public GameObject rayObject;
@@ -16,6 +17,7 @@ public class UIManager : MonoBehaviour
         PausePanel.SetActive(false);
         ReportPanel.SetActive(false);
         MedicinePanel.SetActive(false);
+        PianoPanel.SetActive(false);
         rayObject = null;
     }
 

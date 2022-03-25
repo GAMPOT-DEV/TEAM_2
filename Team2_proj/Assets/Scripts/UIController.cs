@@ -7,12 +7,14 @@ public class UIController : MonoBehaviour
     public GameObject PausePanel; //ESC 누르면 나오는 Pause 창
     public GameObject ReportPanel; //처방전 누르면 확대되는 창
     public GameObject MedicinePacketPanel; //약봉지 누르면 확대되는 창
+    public GameObject PianoPanel; //실로폰 누르면 나오는 창
     
     void Start()
     {
         PausePanel.SetActive(false);
         ReportPanel.SetActive(false);
         MedicinePacketPanel.SetActive(false);
+        PianoPanel.SetActive(false);
     }
     
     void Update()

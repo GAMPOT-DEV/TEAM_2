@@ -9,7 +9,15 @@ public class SolvePiano : MonoBehaviour
     public int[] playerArr;
     public int noteCount;
     public bool isClear;
+    public GameObject PianoBox;
 
+    void Start()
+    {
+        Init();
+        PianoBox = GameObject.Find("XylophoneBox");
+        Debug.Log(PianoBox);
+
+    }
     public void Init()
     {
         songArr = new int[7] { 6, 5, 4, 5, 6, 6, 6 };
@@ -18,17 +26,14 @@ public class SolvePiano : MonoBehaviour
         isClear = false;
     }
 
-    public void Test()
+    public void Test(int chordsNum)
     {
-        Debug.Log(noteCount);
-
         if (!isClear)
         {
             if (songArr[noteCount] == chordsNum)
             {
                 playerArr[noteCount] = chordsNum;
                 noteCount++;
-                //Debug.Log("����");
             }
 
             else
@@ -42,7 +47,6 @@ public class SolvePiano : MonoBehaviour
                 {
                     noteCount = 0;
                     playerArr = new int[7] { 0, 0, 0, 0, 0, 0, 0 };
-                    //Debug.Log("Ʋ��");
                 }
 
             }
@@ -52,8 +56,15 @@ public class SolvePiano : MonoBehaviour
         {
             isClear = true;
             Debug.Log("puzzle is solved");
+            PianoBox.GetComponentInChildren<PianoBox>().PlayAnim();
             noteCount = 0;
         }
 
+    }
+
+
+    public void Play_note(AudioSource note)
+    {
+        note.Play();
     }
 }
