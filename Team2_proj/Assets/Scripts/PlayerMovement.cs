@@ -132,7 +132,6 @@ public class PlayerMovement : MonoBehaviour
             //퍼즐별 수행할 함수
             else if(rayObject.tag == "Puzzle")
             {
-                rayObject.GetComponent<grabObject>().isPuzzle = true;
 
                 //틀린그림찾기
                 if (rayObject.name == "picture")
@@ -158,8 +157,17 @@ public class PlayerMovement : MonoBehaviour
                     
                 }
 
+                //자물쇠
+                else if (rayObject.name == "Lock")
+                {
+                    if (Input.GetMouseButtonDown(0))
+                    {
+                        rayObject.GetComponent<Lock>().isClicked = true;
+                    }
+                }
+
                 //여기에 퍼즐을 추가로 쓰기
-                
+
             }
 
             if(rayObject.name == "PillTest")
