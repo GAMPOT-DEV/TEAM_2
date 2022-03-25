@@ -164,10 +164,9 @@ public class PlayerMovement : MonoBehaviour
 
             if(rayObject.name == "PillTest")
             {
-                /*if(rayObject.GetComponent<PillQuiz>().isGrabing == true)
-                {
-                    rayObject.GetComponent<PillQuiz>().ChangePillPosition();
-                }*/
+                rayObject.GetComponent<PillQuiz>().BottleOnTable();
+                Debug.Log("Pill Position Change & Pill Quiz Start!");
+                rayObject.GetComponent<PillQuiz>().PillQuizStart();
             }
             
     

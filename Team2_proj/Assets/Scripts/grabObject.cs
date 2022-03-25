@@ -13,12 +13,6 @@ public class grabObject : MonoBehaviour
     public MeshRenderer myRenderer;
     public Transform playerPos;
 
-    
-    
-
-
-
-
     void Start()
     {
 
@@ -105,7 +99,7 @@ public class grabObject : MonoBehaviour
 
         //여기에 퍼즐 추가
 
-    }
+    } //-> crosshair로
 
     public bool IsInRay()
     {
@@ -133,7 +127,4 @@ public class grabObject : MonoBehaviour
 
         }
     }
-
-
-
 }
