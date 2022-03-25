@@ -15,7 +15,6 @@ public class SolvePiano : MonoBehaviour
     {
         Init();
         PianoBox = GameObject.Find("XylophoneBox");
-        Debug.Log(PianoBox);
 
     }
     public void Init()
