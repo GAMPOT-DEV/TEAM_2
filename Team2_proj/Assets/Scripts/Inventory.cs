@@ -58,74 +58,29 @@ public class Inventory : MonoBehaviour
     {
         curItem.transform.position = GameObject.Find("The Dest").transform.position;
         if (Input.GetKeyDown(KeyCode.Alpha1))
-        {
-            curItem.SetActive(false);
-            if (itemCheck[0] == true)
-            {
-                curSlot = slots[0];
-                curItem = curSlot.GetComponent<Slot>().item;
-                curItem.SetActive(true);
-            }
-        }
+            SelectItem(0);
         if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            curItem.SetActive(false);
-            if (itemCheck[1] == true)
-            {
-                curSlot = slots[1];
-                curItem = curSlot.GetComponent<Slot>().item;
-                curItem.SetActive(true);
-            }
-        }
+            SelectItem(1);
         if (Input.GetKeyDown(KeyCode.Alpha3))
-        {
-            curItem.SetActive(false);
-            if (itemCheck[2] == true)
-            {
-                curSlot = slots[2];
-                curItem = curSlot.GetComponent<Slot>().item;
-                curItem.SetActive(true);
-            }
-        }
+            SelectItem(2);
         if (Input.GetKeyDown(KeyCode.Alpha4))
-        {
-            curItem.SetActive(false);
-            if (itemCheck[3] == true)
-            {
-                curSlot = slots[3];
-                curItem = curSlot.GetComponent<Slot>().item;
-                curItem.SetActive(true);
-            }
-        }
+            SelectItem(3);
         if (Input.GetKeyDown(KeyCode.Alpha5))
-        {
-            curItem.SetActive(false);
-            if (itemCheck[4] == true)
-            {
-                curSlot = slots[4];
-                curItem = curSlot.GetComponent<Slot>().item;
-                curItem.SetActive(true);
-            }
-        }
+            SelectItem(4);
         if (Input.GetKeyDown(KeyCode.Alpha6) && itemCheck[5] == true)
-        {
-            curItem.SetActive(false);
-            if (itemCheck[5] == true)
-            {
-                curSlot = slots[5];
-                curItem = curSlot.GetComponent<Slot>().item;
-                curItem.SetActive(true);
-            }
-        }
+            SelectItem(5);
         if (Input.GetKeyDown(KeyCode.Alpha7) && itemCheck[6] == true)
+            SelectItem(6);
+    }
+
+    void SelectItem(int index)
+    {
+        curItem.SetActive(false);
+        if (itemCheck[index] == true)
         {
-            curItem.SetActive(false);
-            if (itemCheck[6] == true)
-            {
-                curSlot = slots[6];
-                curItem = curSlot.GetComponent<Slot>().item;
-                curItem.SetActive(true);
-            }
+            curSlot = slots[index];
+            curItem = curSlot.GetComponent<Slot>().item;
+            curItem.SetActive(true);
         }
     }
 }
