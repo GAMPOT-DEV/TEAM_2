@@ -5,13 +5,15 @@ using UnityEngine;
 public class grabObject : MonoBehaviour
 {
     public Transform theDest;
-
     public bool isGrabable; //playerMovement.cs 에서 raycast에 충돌했을 때 true
     public bool isGrabing; //playerMovement.cs 에서 raycast에 충돌했을 때 클릭 시 true
+    public bool isPuzzle;
     public Rigidbody myRigid;
     public Collider myCollider;
     public MeshRenderer myRenderer;
     public Transform playerPos;
+
+    
     
 
 
@@ -22,14 +24,14 @@ public class grabObject : MonoBehaviour
 
         isGrabing = false;
         isGrabable = false;
+        isPuzzle = false;
         playerPos = GameObject.FindWithTag("Player").transform;
+
         
     }
 
     void Update()
     {
-
-
         objSpin();
         RayCollide();
         HighlightObj();
@@ -85,9 +87,9 @@ public class grabObject : MonoBehaviour
         {
             myRenderer = GetComponent<MeshRenderer>();
 
-            myRenderer.material.color = new Color(1, 0, 0);
+            myRenderer.material.color = Color.yellow * 0.7f;
         }
-    }    
+    }
 
     public bool IsInRay()
     {

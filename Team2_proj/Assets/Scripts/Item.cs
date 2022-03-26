@@ -1,20 +1,33 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-[CreateAssetMenu(fileName = "New Item", menuName = "New Item/item")]
-
-public class Item : ScriptableObject
+public class Item : MonoBehaviour
 {
-    public enum ItemType { 
-        Equipment,
-        Used,
-        Ingredient,
-        ETC,
-    };
-
-    public string itemName;
-    public ItemType itemType;
+    public bool isClick;
+    public bool isGet;
     public Sprite itemImage;
-    public GameObject itemPrefab;
+    void Start()
+    {
+        isClick = false;
+        isGet = false;
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (isClick && (isGet == false))
+        {
+            getItem();
+            isClick = false;
+            isGet = true;
+        }
+    }
+
+    void getItem()
+    {
+        GameObject.Find("Inventory_setting").GetComponent<Inventory>().itemImage = itemImage;
+        GameObject.Find("Inventory_setting").GetComponent<Inventory>().isGet = true;
+    }
 }

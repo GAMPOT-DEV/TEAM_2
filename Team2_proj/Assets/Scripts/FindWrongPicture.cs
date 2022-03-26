@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class FindWrongPicture : MonoBehaviour
 {
-    public Animation anim;
     public bool isFocus;
     public Vector3 localPoint;
-    bool flag = false;
+    bool isSolved;
 
     private void Start()
     {
+        isSolved = false;
         isFocus = false;
     }
     void Update()
@@ -23,19 +23,16 @@ public class FindWrongPicture : MonoBehaviour
 
     public void SolveQuiz(Vector3 localPoint)
     {
-        //틀린 부분에 해당하는 좌표에 raycast가 충돌한 상태로 마우스 왼쪽 클릭을 하면 이벤트 발생
-        if((localPoint.x <= 0.44 && localPoint.x >= 0.39)  && (localPoint.y >= 0.06 && localPoint.y <= 0.13))
+        if ((localPoint.x >= -0.44 && localPoint.x <= -0.39)  && (localPoint.y >= 0.06 && localPoint.y <= 0.13))
         {
             if (Input.GetMouseButtonDown(0))
             {
-                if (flag == false)
+                if (isSolved == false)
                 {
-                    anim = gameObject.GetComponent<Animation>();
-                    anim.Play("Quiz1");
-                    flag = true;
+                    gameObject.GetComponentInParent<Quiz1_Play>().isPlay = true;
+                    isSolved = true;
                 }
             }
         }
-        isFocus = false;
     }
 }

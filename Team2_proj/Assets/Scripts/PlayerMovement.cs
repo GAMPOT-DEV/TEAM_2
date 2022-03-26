@@ -9,12 +9,14 @@ public class PlayerMovement : MonoBehaviour
     public PhysicMaterial PlayerFriction;
     public Transform theDest;
     public GameObject rayObject;
+    public bool isMoveable;
 
     float MoveSpeed;
     float rotSpeed;
     float currentRot;
     float jumpPower;
     bool isJumping;
+    
 
     void Start()
     {
@@ -24,18 +26,27 @@ public class PlayerMovement : MonoBehaviour
         jumpPower = 5.0f;
         isJumping = false;
         rayObject = null;
+        isMoveable = true;
     }
 
     private void FixedUpdate()
     {
-        PlayerMove();
+        if(isMoveable)
+        {
+            PlayerMove();
+        }
+        
     }
 
     void Update()
     {
-        Jump();
-        RotCtrl();
-        RayCast();
+        if (isMoveable)
+        {
+            Jump();
+            RotCtrl();
+            RayCast();
+        }
+
     }
 
     void PlayerMove()
@@ -103,9 +114,10 @@ public class PlayerMovement : MonoBehaviour
         //raycast에 오브젝트가 충돌했을때
         if(Physics.Raycast(playerCam.transform.position, playerCam.transform.forward, out hit, 3))
         {
+            GameObject.Find("Crosshair").GetComponent<CrossHair>().isFocus = false;
             rayObject = hit.collider.gameObject;
 
-            //오브젝트가 잡을 수 있는 tag라면
+            //오브젝트가 잡을 수 있는 tag라면 isGrabing이 참이고 highlight함수가 호출됨
             if (rayObject.tag == "Grabable")
             {
                 rayObject.GetComponent<grabObject>().isGrabable = true;
@@ -118,30 +130,62 @@ public class PlayerMovement : MonoBehaviour
                 }
             }
 
-            //오브젝트가 틀린그림찾기 이미지면 발생
-            if (rayObject.name == "picture")
+            //퍼즐별 수행할 함수
+            else if(rayObject.tag == "Puzzle")
             {
-                //월드 좌표를 로컬 좌표로 변환
-                if (Physics.Raycast(transform.position, -Vector3.up, 100))
-                {
-                    Vector3 v3LocalPoint = hit.transform.InverseTransformPoint(hit.point);
-                    //Debug.Log(hit.point.y);
-                    rayObject.GetComponentInParent<FindWrongPicture>().isFocus = true;
-                    rayObject.GetComponentInParent<FindWrongPicture>().localPoint = v3LocalPoint;
-                }
-           
-            }
+                GameObject.Find("Crosshair").GetComponent<CrossHair>().isFocus = true;
 
-            //피아노를 클릭했을 경우 피아노 스크립트 실행
-            if (rayObject.name == "Piano")
-            {
-                if (Input.GetMouseButtonDown(0))
+                //틀린그림찾기
+                if (rayObject.name == "picture")
                 {
-                    rayObject.GetComponent<Piano>().isClicked = true;
-                }
-
-            }
+                    //월드 좌표를 로컬 좌표로 변환
+                    if (Physics.Raycast(transform.position, -Vector3.up, 100))
+                    {
+                        Vector3 v3LocalPoint = hit.transform.InverseTransformPoint(hit.point);
+                        rayObject.GetComponentInParent<FindWrongPicture>().isFocus = true;
+                        rayObject.GetComponentInParent<FindWrongPicture>().localPoint = v3LocalPoint;
+                    }
             
+                }
+
+                //실로폰
+                else if(rayObject.name == "xylophone")
+                {
+                    if(Input.GetMouseButtonDown(0))
+                    {
+                        rayObject.GetComponent<Piano>().isClicked = true;
+                    }
+                    
+                }
+
+                //자물쇠
+                else if (rayObject.name == "Lock")
+                {
+                    if (Input.GetMouseButtonDown(0))
+                    {
+                        rayObject.GetComponent<Lock>().isClicked = true;
+                    }
+                }
+
+                if(rayObject.GetComponent<Item>())
+                {
+                    if (Input.GetMouseButtonDown(0))
+                    {
+                        rayObject.GetComponent<Item>().isClick = true;
+                    }
+                }
+
+                //여기에 퍼즐을 추가로 쓰기
+
+            }
+
+            if(rayObject.name == "PillTest")
+            {
+                /*if(rayObject.GetComponent<PillQuiz>().isGrabing == true)
+                {
+                    rayObject.GetComponent<PillQuiz>().ChangePillPosition();
+                }*/
+            }
         }
         else
         {
