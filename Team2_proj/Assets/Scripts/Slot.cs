@@ -7,12 +7,13 @@ public class Slot : MonoBehaviour
 {
     public bool isFloat;
     public Image itemImage;
-    GameObject Item;
+    public GameObject itemSlot;
+    public GameObject item;
     void Start()
     {
         isFloat = false;
-        Item = transform.GetChild(0).gameObject;
-        itemImage = Item.GetComponent<Image>();
+        itemSlot = transform.GetChild(0).gameObject;
+        itemImage = itemSlot.GetComponent<Image>();
     }
 
     // Update is called once per frame
@@ -26,6 +27,6 @@ public class Slot : MonoBehaviour
 
     void FloatItem()
     {
-        Item.SetActive(true);
+        itemSlot.SetActive(true);
     }
 }

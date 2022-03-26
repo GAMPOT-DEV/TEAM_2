@@ -27,6 +27,8 @@ public class Item : MonoBehaviour
 
     void getItem()
     {
+        gameObject.SetActive(false);
+        GameObject.Find("Inventory_setting").GetComponent<Inventory>().getItem = gameObject;
         GameObject.Find("Inventory_setting").GetComponent<Inventory>().itemImage = itemImage;
         GameObject.Find("Inventory_setting").GetComponent<Inventory>().isGet = true;
     }
