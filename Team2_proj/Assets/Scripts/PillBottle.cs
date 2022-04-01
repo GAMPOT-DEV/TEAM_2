@@ -22,7 +22,7 @@ public class PillBottle : grabObject
 
     public void ChangePillPosition()
     {
-        transform.position = new Vector3(0.99f, 1.183f, 9.211f);
-        transform.eulerAngles = new Vector3(0f, 0f, 122.378f);
+        gameObject.transform.position = new Vector3(0.99f, 1.183f, 9.211f);
+        gameObject.transform.eulerAngles = new Vector3(0f, 0f, 122.378f);
     }
 }

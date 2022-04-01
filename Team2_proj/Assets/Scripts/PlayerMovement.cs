@@ -174,9 +174,18 @@ public class PlayerMovement : MonoBehaviour
             {
                 rayObject.GetComponent<PillQuiz>().BottleOnTable();
                 Debug.Log("Pill Position Change & Pill Quiz Start!");
-                rayObject.GetComponent<PillQuiz>().PillQuizStart();
+                //rayObject.GetComponent<PillQuiz>().PillQuizStart();
             }
             
+            if(rayObject.name == "pill(Clone)")
+            {
+                Debug.Log("Pill");
+                if (Input.GetMouseButtonDown(0))
+                {
+                    rayObject.GetComponent<Pill>().PillBreak();
+                    Debug.Log("Pill Break");
+                }
+            }
     
         }
         else
