@@ -8,9 +8,12 @@ public class UIManager : MonoBehaviour
     public GameObject ReportPanel;
     public GameObject MedicinePanel;
     public GameObject PianoPanel;
+    public GameObject RealPanel;
 
     public Camera playerCam;
     public GameObject rayObject;
+
+    Vector3 mousePos;
 
     void Start()
     {
@@ -18,6 +21,7 @@ public class UIManager : MonoBehaviour
         ReportPanel.SetActive(false);
         MedicinePanel.SetActive(false);
         PianoPanel.SetActive(false);
+        RealPanel.SetActive(false);
         rayObject = null;
     }
 
@@ -25,6 +29,11 @@ public class UIManager : MonoBehaviour
     {
         OpenPause();
         RayCast();
+    }
+
+    public void OpenRealPanel()
+    {
+        RealPanel.SetActive(true);
     }
 
     public void OpenPause()
@@ -64,12 +73,10 @@ public class UIManager : MonoBehaviour
 
     void RayCast()
     {
-        //crosshair�� ����Ű�� �ִ� object
         RaycastHit hit;
 
         Debug.DrawRay(playerCam.transform.position, playerCam.transform.forward * 8, Color.red);
 
-        //raycast�� ������Ʈ�� �浹������
         if (Physics.Raycast(playerCam.transform.position, playerCam.transform.forward, out hit, 3))
         {
             rayObject = hit.collider.gameObject;
@@ -90,14 +97,33 @@ public class UIManager : MonoBehaviour
             {
                 Time.timeScale = 1f;
                 MedicinePanel.SetActive(true);
-
-                if (Input.GetMouseButtonDown(0))
-                    MedicinePanel.SetActive(false);
             }
+
+
         }
         else
         {
             rayObject = null;
         }
+    }
+
+    public void CloseReport()
+    {
+        ReportPanel.SetActive(false);
+    }
+
+    public void CloseMedicine()
+    {
+        MedicinePanel.SetActive(false);
+    }
+
+    public void ReturnToReal()
+    {
+        Debug.Log("Setting Quiz Clear");
+    }
+
+    public void NoReturnToReal()
+    {
+        Debug.Log("처음으로 돌아간다.");
     }
 }
