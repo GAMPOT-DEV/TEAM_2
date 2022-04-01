@@ -9,6 +9,8 @@ TagManager:
   - Grabable
   - Puzzle
   - SolvedPuzzle
+  - Floor
+  - Floor_Obj
   layers:
   - Default
   - TransparentFX
