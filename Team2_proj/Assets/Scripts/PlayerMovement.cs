@@ -122,7 +122,7 @@ public class PlayerMovement : MonoBehaviour
             {
                 rayObject.GetComponent<grabObject>().isGrabable = true;
 
-                if (Input.GetMouseButtonDown(0))
+                if (Input.GetMouseButtonDown(1))
                 {
                     //grabObject.cs에서 
                     rayObject.GetComponent<grabObject>().isGrabing = true;

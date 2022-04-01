@@ -51,7 +51,7 @@ public class grabObject : MonoBehaviour
     {
         if(isGrabing)
         {
-            isGrabing = Input.GetMouseButton(0);
+            isGrabing = Input.GetMouseButton(1);
 
             myRigid = GetComponent<Rigidbody>();
             myCollider = GetComponent<Collider>();
