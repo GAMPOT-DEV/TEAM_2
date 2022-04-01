@@ -31,5 +31,6 @@ public class Item : MonoBehaviour
         GameObject.Find("Inventory_setting").GetComponent<Inventory>().getItem = gameObject;
         GameObject.Find("Inventory_setting").GetComponent<Inventory>().itemImage = itemImage;
         GameObject.Find("Inventory_setting").GetComponent<Inventory>().isGet = true;
+        gameObject.transform.SetParent(GameObject.Find("The Dest").transform);
     }
 }
