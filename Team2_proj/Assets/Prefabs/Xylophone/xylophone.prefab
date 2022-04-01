@@ -58,7 +58,7 @@ Transform:
   m_GameObject: {fileID: 917147800677638893}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 4.3265452, y: 0, z: 0.917}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 825911944429501425}
   - {fileID: 3004650811199044568}
@@ -80,7 +80,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 122
   m_CollisionDetection: 0
 --- !u!65 &34679426525555732
 BoxCollider:
@@ -93,8 +93,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.7, y: 0.2, z: 0.4}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0.7, y: 0.1, z: 0.4}
+  m_Center: {x: 0, y: 0.05, z: 0}
 --- !u!114 &34679426525555734
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -116,8 +116,8 @@ MonoBehaviour:
   myRenderer: {fileID: 0}
   playerPos: {fileID: 0}
   isClicked: 0
-  piano: {fileID: 0}
   setDest: {fileID: 34679426944901318}
+  PianoPanel: {fileID: 0}
 --- !u!1 &1040665262886715280
 GameObject:
   m_ObjectHideFlags: 0

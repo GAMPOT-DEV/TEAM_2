@@ -14,7 +14,7 @@ public class SolvePiano : MonoBehaviour
     void Start()
     {
         Init();
-        PianoBox = GameObject.Find("XylophoneBox");
+        PianoBox = GameObject.Find("box");
 
     }
     public void Init()
@@ -64,6 +64,8 @@ public class SolvePiano : MonoBehaviour
 
     public void Play_note(AudioSource note)
     {
+        Debug.Log("fdsaf");
         note.Play();
+        
     }
 }
