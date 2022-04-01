@@ -117,6 +117,7 @@ public class PlayerMovement : MonoBehaviour
             GameObject.Find("Crosshair").GetComponent<CrossHair>().isFocus = false;
             rayObject = hit.collider.gameObject;
 
+
             //오브젝트가 잡을 수 있는 tag라면 isGrabing이 참이고 highlight함수가 호출됨
             if (rayObject.tag == "Grabable")
             {

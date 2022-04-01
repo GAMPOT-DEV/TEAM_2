@@ -54,6 +54,8 @@ public class SolvePiano : MonoBehaviour
         if (noteCount == 7)
         {
             isClear = true;
+            GameObject.Find("GameManager").GetComponent<GameManager>().SendClearData(this.gameObject);
+            GameObject.Find("Monologue").GetComponent<MonologueManager>().StartText(4,0);
             Debug.Log("puzzle is solved");
             PianoBox.GetComponentInChildren<PianoBox>().PlayAnim();
             noteCount = 0;

@@ -13,14 +13,12 @@ public class Lock : MonoBehaviour
 
     private GameObject player;
     private Transform playerPos;
-    private bool isClear;
     
 
 
     void Start()
     {
         isClicked = false;
-        isClear = false;
         player = GameObject.FindWithTag("Player");
         playerPos = player.transform;
 
@@ -63,14 +61,6 @@ public class Lock : MonoBehaviour
             GetComponent<Collider>().enabled = true;
             player.GetComponent<PlayerMovement>().isMoveable = true;
         }
-
-        //퍼즐이 풀렸을 때, 태그를 puzzle->solved puzzle로 변경, 다시 퍼즐을 실행 못함
-        else if (isClear)
-        {
-            GetComponent<Collider>().enabled = true;
-            player.GetComponent<PlayerMovement>().isMoveable = true;
-            transform.tag = "SolvedPuzzle";
-        }
     }
 
 
@@ -97,10 +87,15 @@ public class Lock : MonoBehaviour
             }
         }
 
-        if(count == 4)
+        //퍼즐이 풀렸을 때, 태그를 puzzle->solved puzzle로 변경, 다시 퍼즐을 실행 못함
+        if (count == 4)
         {
-            isClear = true;
+            GameObject.Find("GameManager").GetComponent<GameManager>().SendClearData(this.gameObject);
             Debug.Log("자물쇠가 풀림");
+            GetComponent<Collider>().enabled = true;
+            player.GetComponent<PlayerMovement>().isMoveable = true;
+
+            transform.tag = "SolvedPuzzle";
         }
        
     }

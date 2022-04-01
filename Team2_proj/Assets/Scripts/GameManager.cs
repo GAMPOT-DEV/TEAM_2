@@ -1,41 +1,53 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    public GameObject PausePanel;
+    public GameManager myGameManger;
+    public Dictionary<string, int> puzzleIndex;
+
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        PausePanel.SetActive(false);
+        puzzleIndex = new Dictionary<string, int>();
+        InitPuzzleIndex();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void SendClearData(GameObject obj)
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        string tempKey = null;
+        foreach(string key in puzzleIndex.Keys)
         {
-            Time.timeScale = 0f;
-            PausePanel.SetActive(true);
+            if(obj.name == key)
+            {
+                tempKey = key;
+                break;
+            }
         }
+        puzzleIndex[tempKey] = 1;
+        Debug.Log(puzzleIndex[tempKey]);
     }
 
-    public void OnClickQuit()
+    void InitPuzzleIndex()
     {
-#if UNITY_EDITOR
-        UnityEditor.EditorApplication.isPlaying = false;
-#else
-        Application.Quit();
-#endif
+        //퍼즐의 초기 상태는 모두 안 풀려있음 -> 0이면 안풀림, 1이면 풀림
+        puzzleIndex.Add("Xylophone", 0);
+        puzzleIndex.Add("Lock", 0);
+        //퍼즐의 프리팹 이름을 추가하고 주석에서 빼야함
+        /*puzzleIndex.Add("", 0);
+        puzzleIndex.Add("", 0);
+        puzzleIndex.Add("", 0);
+        puzzleIndex.Add("", 0);
+        puzzleIndex.Add("", 0);
+        puzzleIndex.Add("", 0);
+        puzzleIndex.Add("", 0);
+
+        */
+
     }
 
-    public void OnClickContinue()
-    {
-        Time.timeScale = 1f;
-        PausePanel.SetActive(false);
-    }
 
-    
 }
