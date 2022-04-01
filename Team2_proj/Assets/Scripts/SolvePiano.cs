@@ -64,7 +64,6 @@ public class SolvePiano : MonoBehaviour
 
     public void Play_note(AudioSource note)
     {
-        Debug.Log("fdsaf");
         note.Play();
         
     }

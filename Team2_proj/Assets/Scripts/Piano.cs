@@ -37,7 +37,7 @@ public class Piano : grabObject
             //플레이어를 실로폰 앞으로 옮긴 후, big sylophone 생성, 위치&카메라 방향 고정
             Camera playerCam = player.GetComponent<PlayerMovement>().playerCam;
             playerPos.position = setDest.position;
-            playerPos.transform.rotation = Quaternion.Euler(new Vector3(0, 90, 0));
+            playerPos.transform.rotation = Quaternion.Euler(new Vector3(0, -90, 0));
             playerCam.transform.localEulerAngles = new Vector3(60f, 0f, 0f);
 
             player.GetComponent<PlayerMovement>().isMoveable = false;
