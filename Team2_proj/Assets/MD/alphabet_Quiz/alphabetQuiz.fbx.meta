@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Team2_proj/Assets/MD/alphabet_Quiz/quiz.fbx.meta
+guid: cd78bdd849cc3d74dbf0517d323a784b
+=======
 guid: b527b85ee6f52ad4b974ab63dfd81707
+>>>>>>> hhtboy-old-version:Team2_proj/Assets/MD/alphabet_Quiz/alphabetQuiz.fbx.meta
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
