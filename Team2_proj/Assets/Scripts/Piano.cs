@@ -26,7 +26,11 @@ public class Piano : grabObject
     void Update()
     {
         ShowPiano();
-        ExitGame();
+        if(transform.CompareTag("Puzzle"))
+        {
+            ExitGame();
+        }
+        
     }
 
     
