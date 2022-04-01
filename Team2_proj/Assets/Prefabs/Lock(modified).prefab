@@ -95,6 +95,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isClicked: 0
   setDest: {fileID: 58190706672687095}
+  chainNum: 0
+  playerNum: 0
+  lockArr: 
+  playerArr: 
 --- !u!1 &3297907741197777564
 GameObject:
   m_ObjectHideFlags: 0
@@ -134,7 +138,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3297907741197777564}
-  m_Mesh: {fileID: 7742938115390561657, guid: 6858bef8a2c1b144ba6ab2eb932a8c43, type: 3}
+  m_Mesh: {fileID: 7742938115390561657, guid: 3b318213810391e489ef591161cd5fdf, type: 3}
 --- !u!23 &7422637697378104645
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -215,7 +219,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3732667233821189907}
-  m_Mesh: {fileID: -3427897367290814815, guid: 6858bef8a2c1b144ba6ab2eb932a8c43, type: 3}
+  m_Mesh: {fileID: -3427897367290814815, guid: 3b318213810391e489ef591161cd5fdf, type: 3}
 --- !u!23 &2553191722179712939
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -296,7 +300,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4498669168306969835}
-  m_Mesh: {fileID: -7904346828854306160, guid: 6858bef8a2c1b144ba6ab2eb932a8c43, type: 3}
+  m_Mesh: {fileID: -7904346828854306160, guid: 3b318213810391e489ef591161cd5fdf, type: 3}
 --- !u!23 &3479909242797257247
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -377,7 +381,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4830919176573037478}
-  m_Mesh: {fileID: -283985760059495127, guid: 6858bef8a2c1b144ba6ab2eb932a8c43, type: 3}
+  m_Mesh: {fileID: -283985760059495127, guid: 3b318213810391e489ef591161cd5fdf, type: 3}
 --- !u!23 &7253212828653541764
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -458,7 +462,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8096050594167585810}
-  m_Mesh: {fileID: -7371664085059725297, guid: 6858bef8a2c1b144ba6ab2eb932a8c43, type: 3}
+  m_Mesh: {fileID: -7371664085059725297, guid: 3b318213810391e489ef591161cd5fdf, type: 3}
 --- !u!23 &2133464950712397009
 MeshRenderer:
   m_ObjectHideFlags: 0

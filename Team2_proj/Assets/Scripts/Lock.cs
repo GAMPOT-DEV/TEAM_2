@@ -43,7 +43,7 @@ public class Lock : MonoBehaviour
             Camera playerCam = player.GetComponent<PlayerMovement>().playerCam;
             playerCam.transform.localEulerAngles = new Vector3(0f, 0f, 0f);
             playerPos.position = setDest.position;
-            playerPos.transform.rotation = Quaternion.Euler(new Vector3(0, 90, 0));
+            playerPos.transform.rotation = Quaternion.Euler(new Vector3(0, -90, 0));
 
             player.GetComponent<PlayerMovement>().isMoveable = false;
 
