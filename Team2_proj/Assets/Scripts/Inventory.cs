@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class Inventory : MonoBehaviour
 {
+    bool changeExist;
+    bool isDetail;
     bool isExist;
     public bool isGet;
     public bool[] itemCheck = new bool[7];
@@ -13,10 +15,16 @@ public class Inventory : MonoBehaviour
     public GameObject curSlot;
     public GameObject getItem;
     public GameObject curItem;
+    public GameObject TopView_UI;
+    public GameObject player;
     void Start()
     {
+        player = GameObject.Find("Player");
+        TopView_UI = GameObject.Find("TopView_UI");
         isExist = false;
         isGet = false;
+        isDetail = false;
+        changeExist = false;
         for(int i = 0;i < transform.childCount; i++)
         {
             slots[i] = transform.GetChild(i).gameObject;
@@ -36,7 +44,13 @@ public class Inventory : MonoBehaviour
             isExist = true;
         }
         if (isExist == true)
+        {
             ChangeSlot();
+        }
+        if (changeExist == true)
+        {
+            ImageDetail();
+        }
     }
 
     void FindSlot()
@@ -58,19 +72,33 @@ public class Inventory : MonoBehaviour
     {
         curItem.transform.position = GameObject.Find("The Dest").transform.position;
         if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
             SelectItem(0);
+        }
         if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
             SelectItem(1);
+        }
         if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
             SelectItem(2);
+        }
         if (Input.GetKeyDown(KeyCode.Alpha4))
+        {
             SelectItem(3);
+        }
         if (Input.GetKeyDown(KeyCode.Alpha5))
+        {
             SelectItem(4);
-        if (Input.GetKeyDown(KeyCode.Alpha6) && itemCheck[5] == true)
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha6))
+        {
             SelectItem(5);
-        if (Input.GetKeyDown(KeyCode.Alpha7) && itemCheck[6] == true)
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha7))
+        {
             SelectItem(6);
+        }
     }
 
     void SelectItem(int index)
@@ -81,6 +109,26 @@ public class Inventory : MonoBehaviour
             curSlot = slots[index];
             curItem = curSlot.GetComponent<Slot>().item;
             curItem.SetActive(true);
+            changeExist = true;
+            return;
+        }
+        changeExist = false;
+    }
+
+    void ImageDetail()
+    {
+        if (Input.GetKeyDown(KeyCode.R) && (isDetail == false))
+        {
+            player.GetComponent<PlayerMovement>().isMoveable = false;
+            TopView_UI.GetComponent<Image>().sprite = curItem.GetComponent<Item>().itemImage;
+            TopView_UI.GetComponent<Image>().enabled = true;
+            isDetail = true;
+        }
+        if (Input.GetKeyDown(KeyCode.I) && (isDetail == true))
+        {
+            TopView_UI.GetComponent<Image>().enabled = false;
+            player.GetComponent<PlayerMovement>().isMoveable = true;
+            isDetail = false;
         }
     }
 }

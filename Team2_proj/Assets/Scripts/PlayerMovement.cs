@@ -78,7 +78,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("floor"))
+        if (collision.gameObject.CompareTag("Floor") || collision.gameObject.CompareTag("Floor_Obj"))
         {
             isJumping = false;
             PlayerFriction.dynamicFriction = 0.6f;
