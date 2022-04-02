@@ -179,12 +179,21 @@ public class PlayerMovement : MonoBehaviour
 
             }
 
-            if(rayObject.name == "PillTest")
+            if (rayObject.name == "Pill Bound")
             {
-                /*if(rayObject.GetComponent<PillQuiz>().isGrabing == true)
+                rayObject.GetComponent<PillQuiz>().BottleOnTable();
+                Debug.Log("Pill Position Change & Pill Quiz Start!");
+                //rayObject.GetComponent<PillQuiz>().PillQuizStart();
+            }
+
+            if (rayObject.name == "pill(Clone)")
+            {
+                Debug.Log("Pill");
+                if (Input.GetMouseButtonDown(0))
                 {
-                    rayObject.GetComponent<PillQuiz>().ChangePillPosition();
-                }*/
+                    rayObject.GetComponent<Pill>().PillBreak();
+                    Debug.Log("Pill Break");
+                }
             }
         }
         else

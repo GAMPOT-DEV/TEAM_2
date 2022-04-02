@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class Inventory : MonoBehaviour
 {
     bool changeExist;
-    bool isDetail;
+    public bool isDetail;
     bool isExist;
     public bool isGet;
     public bool[] itemCheck = new bool[7];
@@ -130,5 +130,12 @@ public class Inventory : MonoBehaviour
             player.GetComponent<PlayerMovement>().isMoveable = true;
             isDetail = false;
         }
+    }
+
+    public void CloseDetail()
+    {
+        TopView_UI.GetComponent<Image>().enabled = false;
+        player.GetComponent<PlayerMovement>().isMoveable = true;
+        isDetail = false;
     }
 }

@@ -9,14 +9,18 @@ public class UIManager : MonoBehaviour
     public GameObject MedicinePanel;
     public GameObject PianoPanel;
     public GameObject RealPanel;
+    public GameObject Inventory;
 
     public Camera playerCam;
     public GameObject rayObject;
+    public GameObject player;
 
     Vector3 mousePos;
 
     void Start()
     {
+        player = GameObject.Find("Player");
+
         PausePanel.SetActive(false);
         ReportPanel.SetActive(false);
         MedicinePanel.SetActive(false);
@@ -27,8 +31,31 @@ public class UIManager : MonoBehaviour
 
     void Update()
     {
-        OpenPause();
         RayCast();
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (PausePanel.activeSelf)
+            {
+                OnClickContinue();
+            } else if (ReportPanel.activeSelf)
+            {
+                CloseReport();
+            } else if (MedicinePanel.activeSelf)
+            {
+                CloseMedicine();
+            } else if (PianoPanel.activeSelf)
+            {
+                PianoPanel.SetActive(false);
+                PlayerMove(true);
+            } else if (Inventory.GetComponentInChildren<Inventory>().isDetail)
+            {
+                Inventory.GetComponentInChildren<Inventory>().CloseDetail();
+            } else
+            {
+                OpenPause();
+            }
+        }
     }
 
     public void OpenRealPanel()
@@ -38,22 +65,14 @@ public class UIManager : MonoBehaviour
 
     public void OpenPause()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            OpenPanel(PausePanel);
-        }
+        Inventory.SetActive(false);
+        OpenPanel(PausePanel);
     }
 
     public void OpenPanel(GameObject go)
     {
-        Time.timeScale = 0f;
+        PlayerMove(false);
         go.SetActive(true);
-
-        if (Input.GetMouseButtonDown(0))
-        {
-            if (go == ReportPanel || go == MedicinePanel)
-                go.SetActive(false);
-        }
     }
 
     public void OnClickQuit()
@@ -67,39 +86,29 @@ public class UIManager : MonoBehaviour
 
     public void OnClickContinue()
     {
-        Time.timeScale = 1f;
         PausePanel.SetActive(false);
+        Inventory.SetActive(true);
+        PlayerMove(true);
     }
 
+    //playerMovement로부터 가져오는 방향으로 바꿀 것
     void RayCast()
     {
         RaycastHit hit;
 
-        Debug.DrawRay(playerCam.transform.position, playerCam.transform.forward * 8, Color.red);
-
         if (Physics.Raycast(playerCam.transform.position, playerCam.transform.forward, out hit, 3))
         {
             rayObject = hit.collider.gameObject;
-            //Debug.Log(rayObject.name);
 
             if(rayObject.name == "report" && Input.GetMouseButtonDown(0))
             {
-                Time.timeScale = 1f;
                 ReportPanel.SetActive(true);
-
-                
-
-                //if(ReportPanel.activeSelf == true || Input.GetMouseButtonDown(0))
-                    //ReportPanel.SetActive(false);
             }
 
-            if(rayObject.name == "prescription") //ó����
+            if(rayObject.name == "prescription")
             {
-                Time.timeScale = 1f;
                 MedicinePanel.SetActive(true);
             }
-
-
         }
         else
         {
@@ -110,11 +119,13 @@ public class UIManager : MonoBehaviour
     public void CloseReport()
     {
         ReportPanel.SetActive(false);
+        PlayerMove(true);
     }
 
     public void CloseMedicine()
     {
         MedicinePanel.SetActive(false);
+        PlayerMove(true);
     }
 
     public void ReturnToReal()
@@ -125,5 +136,10 @@ public class UIManager : MonoBehaviour
     public void NoReturnToReal()
     {
         Debug.Log("처음으로 돌아간다.");
+    }
+
+    void PlayerMove(bool b)
+    {
+        player.GetComponent<PlayerMovement>().isMoveable = b;
     }
 }
