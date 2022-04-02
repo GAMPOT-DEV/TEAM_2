@@ -152,9 +152,10 @@ GameObject:
   - component: {fileID: 6068693148734085900}
   - component: {fileID: 7563990820576355510}
   - component: {fileID: -4437517445363593470}
+  - component: {fileID: 1699318161}
   m_Layer: 0
   m_Name: pill_bottle
-  m_TagString: Untagged
+  m_TagString: Grabable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -206,6 +207,26 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.1959678, y: 0.32848597, z: 0.19230473}
   m_Center: {x: -0.000000059604645, y: 0.14038467, z: -0.0023023486}
+--- !u!114 &1699318161
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6877987219828900278}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fde8131199fa3d846a7d33aba3181a43, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  theDest: {fileID: 0}
+  isGrabable: 0
+  isGrabing: 0
+  isPuzzle: 0
+  myRigid: {fileID: 0}
+  myCollider: {fileID: 0}
+  myRenderer: {fileID: 0}
+  playerPos: {fileID: 0}
 --- !u!1 &7435726345926391425
 GameObject:
   m_ObjectHideFlags: 0

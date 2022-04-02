@@ -112,7 +112,7 @@ public class PlayerMovement : MonoBehaviour
         Debug.DrawRay(playerCam.transform.position, playerCam.transform.forward * 8, Color.red);
 
         //raycast에 오브젝트가 충돌했을때
-        if(Physics.Raycast(playerCam.transform.position, playerCam.transform.forward, out hit, 3))
+        if(Physics.Raycast(playerCam.transform.position, playerCam.transform.forward, out hit, 5))
         {
             GameObject.Find("Crosshair").GetComponent<CrossHair>().isFocus = false;
             rayObject = hit.collider.gameObject;
