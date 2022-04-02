@@ -175,6 +175,21 @@ public class PlayerMovement : MonoBehaviour
                     }
                 }
 
+                //옷장
+                else if (rayObject.name == "Closet")
+                {
+                    if (Input.GetMouseButtonDown(0))
+                    {
+                        if (!rayObject.transform.GetComponentInChildren<Closet>().isOpen)
+                        {
+                            rayObject.transform.GetComponentsInChildren<Closet>()[0].isOpen = true;
+                            rayObject.transform.GetComponentsInChildren<Closet>()[0].isClicked = true;
+                            rayObject.transform.GetComponentsInChildren<Closet>()[1].isOpen = true;
+                            rayObject.transform.GetComponentsInChildren<Closet>()[1].isClicked = true;
+                        }
+                    }
+                }
+
                 //여기에 퍼즐을 추가로 쓰기
 
             }
