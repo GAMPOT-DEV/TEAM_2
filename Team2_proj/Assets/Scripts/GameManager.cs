@@ -8,12 +8,18 @@ public class GameManager : MonoBehaviour
 {
     public GameManager myGameManger;
     public Dictionary<string, int> puzzleIndex;
+    public float puzCount; //진행하면서 해결한 퍼즐 수
 
     // Start is called before the first frame update
     void Awake()
     {
         puzzleIndex = new Dictionary<string, int>();
         InitPuzzleIndex();
+    }
+
+    void Start()
+    {
+        puzCount = 0;
     }
 
     public void SendClearData(GameObject obj)

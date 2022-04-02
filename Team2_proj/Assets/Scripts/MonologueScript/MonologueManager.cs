@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 
 public class MonologueManager : MonoBehaviour
@@ -11,6 +12,7 @@ public class MonologueManager : MonoBehaviour
     public GameObject player;
     public GameObject rayCastObj;
     public GameManager manager;
+
 
     [SerializeField]private MonoTextData data;
 
@@ -27,7 +29,18 @@ public class MonologueManager : MonoBehaviour
 
     void Start()
     {
-        StartCoroutine(ShowText(1,0));
+        if (SceneManager.GetActiveScene().name == "FantasyRoom")
+        {
+            StartCoroutine(ShowText(1, 0));
+        }
+        else if (SceneManager.GetActiveScene().name == "RealityRoom")
+        {
+            StartCoroutine(ShowText(8, 0));
+            StartCoroutine(ShowText(8, 1));
+            StartCoroutine(ShowText(8, 2));
+        }
+
+        
         
         
     }
@@ -110,7 +123,7 @@ public class MonologueManager : MonoBehaviour
         monoData.Add(7, new string[] {  });
 
         //ID = 8, 분기점 이후, 순차적으로
-        monoData.Add(8, new string[] { "머리가 깨질 것 같아. 약 먹으면 괜찮아지는 것 아니었나?", "여긴 어디…? 내 방..?", "말도 안돼." });
+        monoData.Add(8, new string[] { "머리가 깨질 것 같아.\n약 먹으면 괜찮아지는 것 아니었나?", "여긴 어디…? 내 방..?", "말도 안돼." });
 
         //ID = 9, 분기점 이전에 포스터를 클릭 시
         monoData.Add(9, new string[] { "참 예쁜 포스터야." });
