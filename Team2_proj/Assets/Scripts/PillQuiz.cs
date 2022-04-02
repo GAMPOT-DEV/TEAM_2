@@ -44,7 +44,8 @@ public class PillQuiz : MonoBehaviour
             }
             if (PillBottle_A.GetComponent<PillBottle>().isGrabing == false && createPill)
             {
-                Pills[0] = Instantiate(Pill, new Vector3(-12.565f, 0.81f, 14.514f), Quaternion.identity);
+                Pills[0] = Instantiate(Pill, new Vector3(0f, 0.1f, 0f), Quaternion.identity);
+                Pills[0].transform.SetParent(gameObject.transform, false);
                 createPill = false;
                 QuizStep++;
             }
@@ -58,8 +59,10 @@ public class PillQuiz : MonoBehaviour
             }
             if (PillBottle_B.GetComponent<PillBottle>().isGrabing == false && createPill)
             {
-                Pills[1] = Instantiate(Pill, new Vector3(-12.4f, 0.81f, 14.514f), Quaternion.identity);
-                Pills[2] = Instantiate(Pill, new Vector3(-12.4f, 0.81f, 14.4f), Quaternion.identity);
+                Pills[1] = Instantiate(Pill, new Vector3(1f, 0.1f, 0f), Quaternion.identity);
+                Pills[2] = Instantiate(Pill, new Vector3(1f, 0.1f, 1f), Quaternion.identity);
+                Pills[1].transform.SetParent(gameObject.transform, false);
+                Pills[2].transform.SetParent(gameObject.transform, false);
                 createPill = false;
                 QuizStep++;
             }
@@ -73,7 +76,8 @@ public class PillQuiz : MonoBehaviour
             }
             if (PillBottle_A.GetComponent<PillBottle>().isGrabing == false && createPill)
             {
-                Pills[3] = Instantiate(Pill, new Vector3(-12.565f, 0.81f, 14.4f), Quaternion.identity);
+                Pills[3] = Instantiate(Pill, new Vector3(0f, 0.1f, 1f), Quaternion.identity);
+                Pills[3].transform.SetParent(gameObject.transform, false);
                 createPill = false;
                 QuizStep++;
             }
