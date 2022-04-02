@@ -43,7 +43,7 @@ public class Inventory : MonoBehaviour
                 curItem = getItem;
             isExist = true;
         }
-        if (isExist == true)
+        if (isExist == true && isDetail == false)
         {
             ChangeSlot();
         }
