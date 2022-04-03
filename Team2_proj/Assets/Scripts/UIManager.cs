@@ -35,25 +35,29 @@ public class UIManager : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (PausePanel.activeSelf)
+            if (!(Inventory.GetComponentInChildren<Inventory>().isDetail))
             {
-                OnClickContinue();
-            } else if (ReportPanel.activeSelf)
-            {
-                CloseReport();
-            } else if (MedicinePanel.activeSelf)
-            {
-                CloseMedicine();
-            } else if (PianoPanel.activeSelf)
-            {
-                PianoPanel.SetActive(false);
-                PlayerMove(true);
-            } else if (Inventory.GetComponentInChildren<Inventory>().isDetail)
-            {
-                Inventory.GetComponentInChildren<Inventory>().CloseDetail();
-            } else
-            {
-                OpenPause();
+                if (PausePanel.activeSelf)
+                {
+                    OnClickContinue();
+                }
+                else if (ReportPanel.activeSelf)
+                {
+                    CloseReport();
+                }
+                else if (MedicinePanel.activeSelf)
+                {
+                    CloseMedicine();
+                }
+                else if (PianoPanel.activeSelf)
+                {
+                    PianoPanel.SetActive(false);
+                    PlayerMove(true);
+                }
+                else
+                {
+                    OpenPause();
+                }
             }
         }
     }

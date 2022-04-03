@@ -511,17 +511,17 @@ PrefabInstance:
     - target: {fileID: 3892160173565702885, guid: 4aa3852bcd5646f47a870302792d073a,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 8.147667
+      value: 10.687667
       objectReference: {fileID: 0}
     - target: {fileID: 3892160173565702885, guid: 4aa3852bcd5646f47a870302792d073a,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.11
+      value: 7.4309998
       objectReference: {fileID: 0}
     - target: {fileID: 3892160173565702885, guid: 4aa3852bcd5646f47a870302792d073a,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -11.560205
+      value: -0.1302059
       objectReference: {fileID: 0}
     - target: {fileID: 3892160173565702885, guid: 4aa3852bcd5646f47a870302792d073a,
         type: 3}
@@ -1120,6 +1120,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: sofa_fantasy
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9170d3964a2db2b49af29ed1cc757fa9,
+        type: 3}
+      propertyPath: m_TagString
+      value: Floor_Obj
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9170d3964a2db2b49af29ed1cc757fa9, type: 3}
@@ -2534,6 +2539,26 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b45507864017f994682946646a32fb10, type: 3}
+--- !u!1 &723845250 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 99aa5492220ae344dae0431b63e1cad3,
+    type: 3}
+  m_PrefabInstance: {fileID: 1171883857}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &723845253
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 723845250}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -3613724358419971262, guid: 99aa5492220ae344dae0431b63e1cad3, type: 3}
 --- !u!224 &725271379 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6984563922105518986, guid: c72c077f392e25647ae5273a0a13b293,
@@ -3970,6 +3995,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: desk_fantasy
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 99aa5492220ae344dae0431b63e1cad3,
+        type: 3}
+      propertyPath: m_TagString
+      value: Floor_Obj
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 99aa5492220ae344dae0431b63e1cad3, type: 3}
 --- !u!1001 &1203267515
@@ -3987,17 +4017,17 @@ PrefabInstance:
     - target: {fileID: 2374631479520877518, guid: f6a70a543ff0e9f44a0fad88d18810b6,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 8.21
+      value: 10.75
       objectReference: {fileID: 0}
     - target: {fileID: 2374631479520877518, guid: f6a70a543ff0e9f44a0fad88d18810b6,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.109
+      value: 7.43
       objectReference: {fileID: 0}
     - target: {fileID: 2374631479520877518, guid: f6a70a543ff0e9f44a0fad88d18810b6,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -10.75
+      value: 0.68
       objectReference: {fileID: 0}
     - target: {fileID: 2374631479520877518, guid: f6a70a543ff0e9f44a0fad88d18810b6,
         type: 3}
@@ -4027,7 +4057,7 @@ PrefabInstance:
     - target: {fileID: 2374631479520877518, guid: f6a70a543ff0e9f44a0fad88d18810b6,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 270
+      value: 300.45883
       objectReference: {fileID: 0}
     - target: {fileID: 2374631479520877518, guid: f6a70a543ff0e9f44a0fad88d18810b6,
         type: 3}
@@ -5260,6 +5290,26 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1547955238}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1508832497 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 9170d3964a2db2b49af29ed1cc757fa9,
+    type: 3}
+  m_PrefabInstance: {fileID: 317773345}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &1508832500
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1508832497}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 8283390533300948346, guid: 9170d3964a2db2b49af29ed1cc757fa9, type: 3}
 --- !u!1 &1525367592
 GameObject:
   m_ObjectHideFlags: 0
