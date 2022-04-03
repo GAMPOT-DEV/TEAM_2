@@ -134,7 +134,7 @@ public class UIManager : MonoBehaviour
 
     public void ReturnToReal()
     {
-        Debug.Log("Setting Quiz Clear");
+        //SceneManager.LoadScene("RealityRoom");
     }
 
     public void NoReturnToReal()

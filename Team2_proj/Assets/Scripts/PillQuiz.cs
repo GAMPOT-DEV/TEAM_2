@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PillQuiz : MonoBehaviour
 {
@@ -10,6 +11,8 @@ public class PillQuiz : MonoBehaviour
     Transform[] Pills = new Transform[4]; //...왜 transform이지?
     bool createPill = false;
     int QuizStep = 0;
+    public bool isSolved;
+
     /*
      * 1. 약병 A의 약을 쏟았는지
      * 2. 약병 B의 약을 쏟았는지
@@ -19,7 +22,7 @@ public class PillQuiz : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        isSolved = false;
     }
 
     // Update is called once per frame
@@ -91,16 +94,20 @@ public class PillQuiz : MonoBehaviour
     //약을 전부 부쉈을 때, 문제 해결
     public bool IsSolved()
     {
-        for(int i=0; i<4; i++)
+        if (!isSolved)
         {
-            if (Pills[i].GetComponent<Pill>().IsBroken == false)
+            for (int i = 0; i < 4; i++)
             {
-                Debug.Log("Pill Quiz Not Solve");
-                return false;
+                if (Pills[i].GetComponent<Pill>().IsBroken == false)
+                {
+                    Debug.Log("Pill Quiz Not Solve");
+                    return false;
+                }
             }
         }
-        Debug.Log("Pill Quiz is Solved");
 
+        isSolved = true;
+        SceneManager.LoadScene("RealityRoom");
         return true;
     }
 }

@@ -42,6 +42,8 @@ public class GameManager : MonoBehaviour
         //퍼즐의 초기 상태는 모두 안 풀려있음 -> 0이면 안풀림, 1이면 풀림
         puzzleIndex.Add("Xylophone", 0);
         puzzleIndex.Add("Lock", 0);
+        puzzleIndex.Add("Report", 0);
+        puzzleIndex.Add("Pill Bound", 0);
         //퍼즐의 프리팹 이름을 추가하고 주석에서 빼야함
         /*puzzleIndex.Add("", 0);
         puzzleIndex.Add("", 0);

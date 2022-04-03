@@ -191,6 +191,14 @@ public class PlayerMovement : MonoBehaviour
                 }
 
                 //여기에 퍼즐을 추가로 쓰기
+                if (rayObject.name == "Report")
+                {
+                    if (Input.GetMouseButtonDown(0))
+                    {
+                        rayObject.GetComponent<ReportQuiz>().isSolved = true;
+                        rayObject.GetComponent<ReportQuiz>().ChangeTag();
+                    }
+                }
 
             }
 
