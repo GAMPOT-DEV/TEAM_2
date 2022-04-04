@@ -206,6 +206,15 @@ public class PlayerMovement : MonoBehaviour
                         }
                     }
                 }
+                
+                //빨간책
+                else if (rayObject.name == "book_red")
+                {
+                    if (Input.GetMouseButtonDown(0))
+                    {
+                        rayObject.GetComponent<RedBook>().isClicked = true;
+                    }
+                }
 
                 //여기에 퍼즐을 추가로 쓰기
                 if (rayObject.name == "Report")

@@ -102,28 +102,28 @@ public class MonologueManager : MonoBehaviour
     void GenerateData()
     {
         //ID = 1, ���� ���� �� ����ȭ�鿡�� ���� ���� ��
-        monoData.Add(1, new string[] { "���޵� �� �ٰ� ǫ ���." });
+        monoData.Add(1, new string[] { "…꿈도 안 꾸고 푹 잤네." });
 
         //ID = 2, (����)���ڷ� ���콺 ����, Ʋ���׸�ã�� �ذ� ��
-        monoData.Add(2, new string[] { "���� ���� ���� �׸��̾�.", "�׷��� �� ���� �������̰�?" });
+        monoData.Add(2, new string[] { "언제 봐도 예쁜 그림이야.","그런데 왜 하필 지느러미가?" });
 
         //ID = 3, ���� �� ���� Ŭ�� ��
-        monoData.Add(3, new string[] { "�̰� ����? ��ȣ?" });
+        monoData.Add(3, new string[] { "이건 뭐지? 암호?" });
 
         //ID = 4, �Ƿ��� ���� �ذ� ��
-        monoData.Add(4, new string[] { "� �� �� �뷡 �� �����ߴµ�." });
+        monoData.Add(4, new string[] { "어릴 때 이 노래 참 좋아했는데." });
 
         //ID = 5, ���ܼ� �߰� ��
-        monoData.Add(5, new string[] { "���ܼ�? ���� ������ �� ���� �־���?" });
+        monoData.Add(5, new string[] { "진단서? 내가 병원에 간 적이 있었나?" });
 
         //ID = 6, ���ܼ��� ��� �����ð� ����, (����)���� �߰�
-        monoData.Add(6, new string[] { "�Ӹ��� ���� �� ����.", "���������� ������ �� ���� ��������?" });
+        monoData.Add(6, new string[] { "머리가 아픈 것 같아."});
 
         //ID = 7, 
         monoData.Add(7, new string[] { "마지막으로 옷장을 연 것이 언제더라?" });
 
         //ID = 8, �б��� ����, ����������
-        monoData.Add(8, new string[] { "�Ӹ��� ���� �� ����.\n�� ������ ���������� �� �ƴϾ���?", "���� ���? �� ��..?", "���� �ȵ�." });
+        monoData.Add(8, new string[] { "머리가 깨질 것 같아.\n약 먹으면 괜찮아지는 것 아니었나?", "여긴 어디…? 내 방..?", "말도 안돼." });
 
         //ID = 9, �б��� ������ �����͸� Ŭ�� ��
         monoData.Add(9, new string[] { "�� ���� �����;�." });
