@@ -29,6 +29,8 @@ public class FindWrongPicture : MonoBehaviour
             {
                 if (isSolved == false)
                 {
+                    GameObject.Find("GameManager").GetComponent<GameManager>().SendClearData(this.gameObject);
+                    GameObject.Find("Monologue").GetComponent<MonologueManager>().StartText(2,1);
                     gameObject.GetComponentInParent<Quiz1_Play>().isPlay = true;
                     isSolved = true;
                 }

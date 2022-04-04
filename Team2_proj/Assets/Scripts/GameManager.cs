@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
 {
     public GameManager myGameManger;
     public Dictionary<string, int> puzzleIndex;
-    public float puzCount; //ÁøÇàÇÏ¸é¼­ ÇØ°áÇÑ ÆÛÁñ ¼ö
+    public float puzCount; //ï¿½ï¿½ï¿½ï¿½ï¿½Ï¸é¼­ ï¿½Ø°ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½
 
     // Start is called before the first frame update
     void Awake()
@@ -39,12 +39,12 @@ public class GameManager : MonoBehaviour
 
     void InitPuzzleIndex()
     {
-        //ÆÛÁñÀÇ ÃÊ±â »óÅÂ´Â ¸ðµÎ ¾È Ç®·ÁÀÖÀ½ -> 0ÀÌ¸é ¾ÈÇ®¸², 1ÀÌ¸é Ç®¸²
+        //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ê±ï¿½ ï¿½ï¿½ï¿½Â´ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ Ç®ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ -> 0ï¿½Ì¸ï¿½ ï¿½ï¿½Ç®ï¿½ï¿½, 1ï¿½Ì¸ï¿½ Ç®ï¿½ï¿½
         puzzleIndex.Add("Xylophone", 0);
         puzzleIndex.Add("Lock", 0);
         puzzleIndex.Add("Report", 0);
-        puzzleIndex.Add("Pill Bound", 0);
-        //ÆÛÁñÀÇ ÇÁ¸®ÆÕ ÀÌ¸§À» Ãß°¡ÇÏ°í ÁÖ¼®¿¡¼­ »©¾ßÇÔ
+        puzzleIndex.Add("picture", 0);
+        //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¸ï¿½ï¿½ï¿½ ï¿½ß°ï¿½ï¿½Ï°ï¿½ ï¿½Ö¼ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         /*puzzleIndex.Add("", 0);
         puzzleIndex.Add("", 0);
         puzzleIndex.Add("", 0);

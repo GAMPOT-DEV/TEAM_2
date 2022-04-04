@@ -16,6 +16,9 @@ public class PlayerMovement : MonoBehaviour
     float currentRot;
     float jumpPower;
     bool isJumping;
+    //처음 raycast 맞았을 때 true, 초기 인터렉트인지 판단하기 위함
+    bool first_focus_picture;
+    bool first_focus_closet;
     
 
     void Start()
@@ -27,6 +30,9 @@ public class PlayerMovement : MonoBehaviour
         isJumping = false;
         rayObject = null;
         isMoveable = true;
+        first_focus_picture = false;
+        first_focus_closet = false;
+
     }
 
     private void FixedUpdate()
@@ -138,6 +144,12 @@ public class PlayerMovement : MonoBehaviour
                 //틀린그림찾기
                 if (rayObject.name == "picture")
                 {
+                    //처음 인터렉트 할 경우 실행
+                    if(!first_focus_picture)
+                    {
+                        GameObject.Find("Monologue").GetComponent<MonologueManager>().StartText(2,0);
+                        first_focus_picture = true;
+                    }
                     //월드 좌표를 로컬 좌표로 변환
                     if (Physics.Raycast(transform.position, -Vector3.up, 100))
                     {
@@ -178,6 +190,11 @@ public class PlayerMovement : MonoBehaviour
                 //옷장
                 else if (rayObject.name == "Closet")
                 {
+                    if(!first_focus_closet)
+                    {
+                        GameObject.Find("Monologue").GetComponent<MonologueManager>().StartText(7,0);
+                        first_focus_closet = true;
+                    }
                     if (Input.GetMouseButtonDown(0))
                     {
                         if (!rayObject.transform.GetComponentInChildren<Closet>().isOpen)
