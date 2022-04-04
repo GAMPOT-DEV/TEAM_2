@@ -37,6 +37,9 @@ public class Lock : MonoBehaviour
     {
         if (isClicked && gameObject.tag != "SolvedPuzzle")
         {
+            //커서 생성
+            Cursor.visible = true;
+
             //자물쇠를 클릭하면 자물쇠 가까이 플레이어를 이동및 고정, 카메라 고정
             Camera playerCam = player.GetComponent<PlayerMovement>().playerCam;
             playerCam.transform.localEulerAngles = new Vector3(0f, 0f, 0f);
@@ -58,6 +61,9 @@ public class Lock : MonoBehaviour
         //ESC로 나갈 때
         if (Input.GetKeyDown(KeyCode.Escape))
         {
+            //커서 제거
+            Cursor.visible = false;
+
             GetComponent<Collider>().enabled = true;
             player.GetComponent<PlayerMovement>().isMoveable = true;
         }
@@ -90,6 +96,9 @@ public class Lock : MonoBehaviour
         //퍼즐이 풀렸을 때, 태그를 puzzle->solved puzzle로 변경, 다시 퍼즐을 실행 못함
         if (count == 4)
         {
+            //커서 제거
+            Cursor.visible = false;
+
             GameObject.Find("GameManager").GetComponent<GameManager>().SendClearData(this.gameObject);
             Debug.Log("자물쇠가 풀림");
             GetComponent<Collider>().enabled = true;

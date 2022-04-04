@@ -49,6 +49,8 @@ public class Piano : grabObject
             //피아노 UI 를 띄움
             PianoPanel.SetActive(true);
 
+            //커서 생성
+            Cursor.visible = true;
             isClicked = false;
         }
         
@@ -62,6 +64,9 @@ public class Piano : grabObject
         //ESC로 나갈 때
         if (Input.GetKeyDown(KeyCode.Escape))
         {
+            //커서 제거
+            Cursor.visible = false;
+
             player.GetComponent<PlayerMovement>().isMoveable = true;
             this.transform.GetChild(1).GetComponent<Renderer>().enabled = true;
 

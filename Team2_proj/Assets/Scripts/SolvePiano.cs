@@ -58,6 +58,9 @@ public class SolvePiano : MonoBehaviour
             GameObject.Find("Monologue").GetComponent<MonologueManager>().StartText(4,0);
             Debug.Log("puzzle is solved");
             PianoBox.GetComponentInChildren<PianoBox>().PlayAnim();
+
+            //커서 제거
+            Cursor.visible = false;
             noteCount = 0;
         }
 
