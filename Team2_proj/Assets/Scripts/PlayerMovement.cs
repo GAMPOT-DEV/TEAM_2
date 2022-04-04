@@ -19,7 +19,9 @@ public class PlayerMovement : MonoBehaviour
     //처음 raycast 맞았을 때 true, 초기 인터렉트인지 판단하기 위함
     bool first_focus_picture;
     bool first_focus_closet;
-    
+    bool first_focus_report;
+
+
 
     void Start()
     {
@@ -32,6 +34,7 @@ public class PlayerMovement : MonoBehaviour
         isMoveable = true;
         first_focus_picture = false;
         first_focus_closet = false;
+        first_focus_report = false;
 
     }
 
@@ -216,11 +219,21 @@ public class PlayerMovement : MonoBehaviour
                     }
                 }
 
+                
+
                 //여기에 퍼즐을 추가로 쓰기
                 if (rayObject.name == "Report")
                 {
+                    if(!first_focus_report)
+                    {
+                        GameObject.Find("Monologue").GetComponent<MonologueManager>().StartText(5, 0);
+                        GameObject.Find("Monologue").GetComponent<MonologueManager>().StartText(6, 0);
+                        first_focus_report = true;
+                    }
+
                     if (Input.GetMouseButtonDown(0))
                     {
+                        
                         rayObject.GetComponent<ReportQuiz>().isSolved = true;
                         rayObject.GetComponent<ReportQuiz>().ChangeTag();
                     }

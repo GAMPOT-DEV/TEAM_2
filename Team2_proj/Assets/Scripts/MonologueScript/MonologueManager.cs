@@ -16,7 +16,7 @@ public class MonologueManager : MonoBehaviour
 
     [SerializeField]private MonoTextData data;
 
-    private bool isActive;//�ؽ�Ʈ�� ǥ����
+    private bool isActive;//대사가 실행중
 
     Dictionary<int, string[]> monoData;
 

@@ -2404,7 +2404,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: b45507864017f994682946646a32fb10,
         type: 3}
       propertyPath: m_Name
-      value: paper 1
+      value: Report
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: b45507864017f994682946646a32fb10,
         type: 3}
@@ -3035,6 +3035,19 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 710211507}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &877237230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 877237229}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5aafa8997ae5f14dbc85b65035ce4e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isSolved: 0
 --- !u!114 &877237233
 MonoBehaviour:
   m_ObjectHideFlags: 0
