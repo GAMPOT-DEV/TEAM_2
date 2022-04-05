@@ -10,7 +10,11 @@ public class ExitDoor : MonoBehaviour
     {
         if(other.name == "Player")
         {
-            EndGame();
+            if(GameObject.Find("GameManager").GetComponent<GameManager>().puzzleIndex["Lock"] == 1)
+            {
+                EndGame();
+            }
+           
         }
         
     }
