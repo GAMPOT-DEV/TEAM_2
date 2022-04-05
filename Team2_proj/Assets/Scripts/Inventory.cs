@@ -120,14 +120,18 @@ public class Inventory : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.R) && (isDetail == false))
         {
             player.GetComponent<PlayerMovement>().isMoveable = false;
-            if(curItem.name == "phone")
+            if (curItem.name == "phone")
             {
                 TopView_UI.GetComponent<Image>().sprite = curItem.GetComponent<Image>().sprite;
                 TopView_UI.GetComponent<Image>().enabled = true;
+                isDetail = true;
             }
-            TopView_UI.GetComponent<Image>().sprite = curItem.GetComponent<Item>().itemImage;
-            TopView_UI.GetComponent<Image>().enabled = true;
-            isDetail = true;
+            else
+            {
+                TopView_UI.GetComponent<Image>().sprite = curItem.GetComponent<Item>().itemImage;
+                TopView_UI.GetComponent<Image>().enabled = true;
+                isDetail = true;
+            }
         }
         if (Input.GetKeyDown(KeyCode.Escape) && (isDetail == true))
         {
