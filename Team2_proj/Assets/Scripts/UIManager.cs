@@ -135,6 +135,7 @@ public class UIManager : MonoBehaviour
     public void ReturnToReal()
     {
         //SceneManager.LoadScene("RealityRoom");
+        GameObject.Find("로마숫자퀴즈오브젝트이름").GetComponent<RomeNumQuiz>().isSolve = true;
     }
 
     public void NoReturnToReal()
