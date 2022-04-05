@@ -4,13 +4,12 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - floor
   - GrabDest
   - Grabable
   - Puzzle
   - SolvedPuzzle
   - Floor
-  - Floor_Obj
+  - Object
   layers:
   - Default
   - TransparentFX

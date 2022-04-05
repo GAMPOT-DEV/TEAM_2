@@ -211,6 +211,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: sofa_reality
       objectReference: {fileID: 0}
+    - target: {fileID: 6280596988701499068, guid: 4f5cd39e51cb98743bf1835bf56be521,
+        type: 3}
+      propertyPath: m_TagString
+      value: Object
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4f5cd39e51cb98743bf1835bf56be521, type: 3}
 --- !u!4 &53726631 stripped
@@ -908,6 +913,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: chair_real (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 56cf9dc3514beca41b13282eb6ad090d,
+        type: 3}
+      propertyPath: m_TagString
+      value: Object
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 56cf9dc3514beca41b13282eb6ad090d, type: 3}
 --- !u!4 &469859240 stripped
@@ -1034,6 +1044,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: book01 (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2a995460635c3cc49be3f45b22592389,
+        type: 3}
+      propertyPath: m_TagString
+      value: Object
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2a995460635c3cc49be3f45b22592389, type: 3}
@@ -1915,6 +1930,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: chair
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 6abddb21727fc2f419c22a7f839210a4,
+        type: 3}
+      propertyPath: m_TagString
+      value: Object
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6abddb21727fc2f419c22a7f839210a4, type: 3}
 --- !u!4 &770494369 stripped
@@ -2203,6 +2223,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: desk
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9ab92e4c9d164a345985f48f8ba82207,
+        type: 3}
+      propertyPath: m_TagString
+      value: Object
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9ab92e4c9d164a345985f48f8ba82207, type: 3}
 --- !u!4 &920063521 stripped
@@ -2335,6 +2360,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: chair_real (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 56cf9dc3514beca41b13282eb6ad090d,
+        type: 3}
+      propertyPath: m_TagString
+      value: Object
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 56cf9dc3514beca41b13282eb6ad090d, type: 3}
@@ -2474,6 +2504,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: book_laid (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1199173787479238360, guid: 37f8e9fad63f5ca4b9afee47a2af49b8,
+        type: 3}
+      propertyPath: m_TagString
+      value: Object
       objectReference: {fileID: 0}
     - target: {fileID: 2012971149148339298, guid: 37f8e9fad63f5ca4b9afee47a2af49b8,
         type: 3}
@@ -2986,6 +3021,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7862391691550088030, guid: e6ec8fced23f67849aa494a233b1ef93,
+        type: 3}
+      propertyPath: m_TagString
+      value: Object
+      objectReference: {fileID: 0}
+    - target: {fileID: -5117294921138143402, guid: e6ec8fced23f67849aa494a233b1ef93,
+        type: 3}
+      propertyPath: m_TagString
+      value: Object
+      objectReference: {fileID: 0}
+    - target: {fileID: -1916899210259106318, guid: e6ec8fced23f67849aa494a233b1ef93,
+        type: 3}
+      propertyPath: m_TagString
+      value: Object
+      objectReference: {fileID: 0}
     - target: {fileID: -1592289475483123607, guid: e6ec8fced23f67849aa494a233b1ef93,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -3001,6 +3051,11 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 06613c1b118083c45bafa79bcd8a1bd7, type: 2}
+    - target: {fileID: 4878498122401541581, guid: e6ec8fced23f67849aa494a233b1ef93,
+        type: 3}
+      propertyPath: m_TagString
+      value: Object
+      objectReference: {fileID: 0}
     - target: {fileID: 5500436077478298816, guid: e6ec8fced23f67849aa494a233b1ef93,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -3192,6 +3247,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: table_reality
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c9b5f21d653d30c4587b08f63223bf85,
+        type: 3}
+      propertyPath: m_TagString
+      value: Object
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c9b5f21d653d30c4587b08f63223bf85, type: 3}
 --- !u!4 &1461597546 stripped
@@ -3312,6 +3372,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: book01 (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2a995460635c3cc49be3f45b22592389,
+        type: 3}
+      propertyPath: m_TagString
+      value: Object
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2a995460635c3cc49be3f45b22592389, type: 3}
@@ -5026,6 +5091,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: OUTSIDE
       objectReference: {fileID: 0}
+    - target: {fileID: 7517391827637702546, guid: fb08ab1cd7d393042a863cca39a0230e,
+        type: 3}
+      propertyPath: m_TagString
+      value: Object
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb08ab1cd7d393042a863cca39a0230e, type: 3}
 --- !u!4 &6437719285923317949 stripped
@@ -5261,6 +5331,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: book_laid
+      objectReference: {fileID: 0}
+    - target: {fileID: 1199173787479238360, guid: 37f8e9fad63f5ca4b9afee47a2af49b8,
+        type: 3}
+      propertyPath: m_TagString
+      value: Object
       objectReference: {fileID: 0}
     - target: {fileID: 2012971149148339298, guid: 37f8e9fad63f5ca4b9afee47a2af49b8,
         type: 3}

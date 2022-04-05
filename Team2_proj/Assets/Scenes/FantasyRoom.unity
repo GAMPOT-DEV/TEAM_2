@@ -1132,7 +1132,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 9170d3964a2db2b49af29ed1cc757fa9,
         type: 3}
       propertyPath: m_TagString
-      value: Floor_Obj
+      value: Object
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9170d3964a2db2b49af29ed1cc757fa9, type: 3}
@@ -2812,6 +2812,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: desk02
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: edd5e3a8bfe335045b50977cad71c57a,
+        type: 3}
+      propertyPath: m_TagString
+      value: Object
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: edd5e3a8bfe335045b50977cad71c57a, type: 3}
 --- !u!1 &802479179 stripped
@@ -3214,7 +3219,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 2a995460635c3cc49be3f45b22592389,
         type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: Object
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2a995460635c3cc49be3f45b22592389, type: 3}
@@ -3905,7 +3910,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 4d10203a930612b49900a789dea99201,
         type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: Object
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4d10203a930612b49900a789dea99201, type: 3}
@@ -4096,7 +4101,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 99aa5492220ae344dae0431b63e1cad3,
         type: 3}
       propertyPath: m_TagString
-      value: Floor_Obj
+      value: Object
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 99aa5492220ae344dae0431b63e1cad3, type: 3}
@@ -4327,7 +4332,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 2a995460635c3cc49be3f45b22592389,
         type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: Object
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2a995460635c3cc49be3f45b22592389, type: 3}
@@ -6036,6 +6041,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 100010, guid: d0223f77114284b47a0e8b317e71e4dc, type: 3}
+      propertyPath: m_TagString
+      value: Object
+      objectReference: {fileID: 0}
     - target: {fileID: 400006, guid: d0223f77114284b47a0e8b317e71e4dc, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.3962579
@@ -6373,6 +6382,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: carpet
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8ce5fb66fc7531f4898adeece7231e0f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Object
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ce5fb66fc7531f4898adeece7231e0f, type: 3}
@@ -6936,6 +6950,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: chair02_fantasy (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3039254557139459259, guid: c5cde4ed0eacdea4e89fe91fd254c6c8,
+        type: 3}
+      propertyPath: m_TagString
+      value: Object
+      objectReference: {fileID: 0}
     - target: {fileID: 3543600197985074542, guid: c5cde4ed0eacdea4e89fe91fd254c6c8,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -7408,6 +7427,11 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: cd9d98aecdbaac1419cf1bfb21f18041, type: 2}
+    - target: {fileID: 6134467344664773518, guid: 080c1c97e99327a4293ad033d5c32c92,
+        type: 3}
+      propertyPath: m_TagString
+      value: Object
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 080c1c97e99327a4293ad033d5c32c92, type: 3}
 --- !u!1001 &418623255300410354
@@ -7865,6 +7889,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: chair02_fantasy
       objectReference: {fileID: 0}
+    - target: {fileID: 3039254557139459259, guid: c5cde4ed0eacdea4e89fe91fd254c6c8,
+        type: 3}
+      propertyPath: m_TagString
+      value: Object
+      objectReference: {fileID: 0}
     - target: {fileID: 3543600197985074542, guid: c5cde4ed0eacdea4e89fe91fd254c6c8,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -8183,7 +8212,7 @@ PrefabInstance:
     - target: {fileID: 800575005244402921, guid: ad29409648c63ff4689b3ac2231bf8c5,
         type: 3}
       propertyPath: m_TagString
-      value: floor
+      value: Floor
       objectReference: {fileID: 0}
     - target: {fileID: 1034265597251471114, guid: ad29409648c63ff4689b3ac2231bf8c5,
         type: 3}
@@ -8412,6 +8441,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1418427183}
     m_Modifications:
+    - target: {fileID: 2394704739084003116, guid: e77db335a1906f74dbd123f9727f1a86,
+        type: 3}
+      propertyPath: m_TagString
+      value: Object
+      objectReference: {fileID: 0}
+    - target: {fileID: 4018856977383809906, guid: e77db335a1906f74dbd123f9727f1a86,
+        type: 3}
+      propertyPath: m_TagString
+      value: Object
+      objectReference: {fileID: 0}
     - target: {fileID: 4815366062602302465, guid: e77db335a1906f74dbd123f9727f1a86,
         type: 3}
       propertyPath: m_RootOrder
@@ -8486,6 +8525,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: bed_fantasy
+      objectReference: {fileID: 0}
+    - target: {fileID: 5971952864192959341, guid: e77db335a1906f74dbd123f9727f1a86,
+        type: 3}
+      propertyPath: m_TagString
+      value: Object
+      objectReference: {fileID: 0}
+    - target: {fileID: 7073072952441517539, guid: e77db335a1906f74dbd123f9727f1a86,
+        type: 3}
+      propertyPath: m_TagString
+      value: Object
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e77db335a1906f74dbd123f9727f1a86, type: 3}
