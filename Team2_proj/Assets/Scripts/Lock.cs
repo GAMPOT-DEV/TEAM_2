@@ -12,6 +12,7 @@ public class Lock : MonoBehaviour
     public int[] playerArr;
 
     private GameObject player;
+    private GameObject door;
     private Transform playerPos;
     
 
@@ -20,6 +21,7 @@ public class Lock : MonoBehaviour
     {
         isClicked = false;
         player = GameObject.FindWithTag("Player");
+        door = GameObject.Find("Box013");
         playerPos = player.transform;
 
         Init();
@@ -32,15 +34,15 @@ public class Lock : MonoBehaviour
     }
 
 
-    //ÀÚ¹°¼è ¶ç¿ì±â
+    //ìë¬¼ì‡  ë„ìš°ê¸°
     void ShowLock()
     {
         if (isClicked && gameObject.tag != "SolvedPuzzle")
         {
-            //Ä¿¼­ »ı¼º
+            //ì»¤ì„œ ìƒì„±
             Cursor.visible = true;
 
-            //ÀÚ¹°¼è¸¦ Å¬¸¯ÇÏ¸é ÀÚ¹°¼è °¡±îÀÌ ÇÃ·¹ÀÌ¾î¸¦ ÀÌµ¿¹× °íÁ¤, Ä«¸Ş¶ó °íÁ¤
+            //ìë¬¼ì‡ ë¥¼ í´ë¦­í•˜ë©´ ìë¬¼ì‡  ê°€ê¹Œì´ í”Œë ˆì´ì–´ë¥¼ ì´ë™ë° ê³ ì •, ì¹´ë©”ë¼ ê³ ì •
             Camera playerCam = player.GetComponent<PlayerMovement>().playerCam;
             playerCam.transform.localEulerAngles = new Vector3(0f, 0f, 0f);
             playerPos.position = setDest.position;
@@ -48,20 +50,20 @@ public class Lock : MonoBehaviour
 
             player.GetComponent<PlayerMovement>().isMoveable = false;
 
-            //Æ÷Ä¿½ºÇÑ µ¿¾ÈÀº collider ²ô±â
+            //í¬ì»¤ìŠ¤í•œ ë™ì•ˆì€ collider ë„ê¸°
             //GetComponent<Collider>().enabled = false;
 
             isClicked = false;
         }
     }
 
-    //°ÔÀÓ Å»Ãâ
+    //ê²Œì„ íƒˆì¶œ
     void ExitGame()
     {
-        //ESC·Î ³ª°¥ ¶§
+        //ESCë¡œ ë‚˜ê°ˆ ë•Œ
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            //Ä¿¼­ Á¦°Å
+            //ì»¤ì„œ ì œê±°
             Cursor.visible = false;
 
             GetComponent<Collider>().enabled = true;
@@ -70,7 +72,7 @@ public class Lock : MonoBehaviour
     }
 
 
-    //ÀÚ¹°¼è Á¤´ä, ÇÃ·¹ÀÌ¾îÀÇ ÇöÀç ¹øÈ£ Á¤º¸
+    //ìë¬¼ì‡  ì •ë‹µ, í”Œë ˆì´ì–´ì˜ í˜„ì¬ ë²ˆí˜¸ ì •ë³´
     public void Init()
     {
         lockArr = new int[] { 1, 2, 3, 4 };
@@ -79,7 +81,7 @@ public class Lock : MonoBehaviour
         playerNum = 1;
     }
 
-    //Å¬¸¯ÇÑ Ã¼ÀÎÀÌ ¸î¹øÂ°ÀÎÁö¿Í, ±× ¹øÈ£¿¡ ´ëÇÑ Á¤º¸¸¦ °¡Á®¿È
+    //í´ë¦­í•œ ì²´ì¸ì´ ëª‡ë²ˆì§¸ì¸ì§€ì™€, ê·¸ ë²ˆí˜¸ì— ëŒ€í•œ ì •ë³´ë¥¼ ê°€ì ¸ì˜´
     public void TestLock(int chainNum,int playerNum)
     {
         transform.GetComponentInParent<Lock>().playerArr[chainNum] = playerNum;
@@ -93,17 +95,17 @@ public class Lock : MonoBehaviour
             }
         }
 
-        //ÆÛÁñÀÌ Ç®·ÈÀ» ¶§, ÅÂ±×¸¦ puzzle->solved puzzle·Î º¯°æ, ´Ù½Ã ÆÛÁñÀ» ½ÇÇà ¸øÇÔ
+        //í¼ì¦ì´ í’€ë ¸ì„ ë•Œ, íƒœê·¸ë¥¼ puzzle->solved puzzleë¡œ ë³€ê²½, ë‹¤ì‹œ í¼ì¦ì„ ì‹¤í–‰ ëª»í•¨
         if (count == 4)
         {
-            //Ä¿¼­ Á¦°Å
+            //ì»¤ì„œ ì œê±°
             Cursor.visible = false;
 
             GameObject.Find("GameManager").GetComponent<GameManager>().SendClearData(this.gameObject);
-            Debug.Log("ÀÚ¹°¼è°¡ Ç®¸²");
+            Debug.Log("ìë¬¼ì‡ ê°€ í’€ë¦¼");
             GetComponent<Collider>().enabled = true;
             player.GetComponent<PlayerMovement>().isMoveable = true;
-
+            door.GetComponent<Door>().OpenDoor();
             transform.tag = "SolvedPuzzle";
         }
        
