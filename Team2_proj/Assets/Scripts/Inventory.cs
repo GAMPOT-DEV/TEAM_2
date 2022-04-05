@@ -125,6 +125,7 @@ public class Inventory : MonoBehaviour
                 TopView_UI.GetComponent<Image>().sprite = curItem.GetComponent<Image>().sprite;
                 TopView_UI.GetComponent<Image>().enabled = true;
                 isDetail = true;
+                curItem.GetComponent<Quiz6>().isSolve = true;
             }
             else
             {
