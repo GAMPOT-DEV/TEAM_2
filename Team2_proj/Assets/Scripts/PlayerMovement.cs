@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -87,7 +87,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Floor") || collision.gameObject.CompareTag("Floor_Obj"))
+        if (collision.gameObject.CompareTag("Floor") || collision.gameObject.CompareTag("Object"))
         {
             isJumping = false;
             PlayerFriction.dynamicFriction = 0.6f;
