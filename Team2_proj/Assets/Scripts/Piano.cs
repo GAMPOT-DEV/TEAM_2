@@ -28,7 +28,7 @@ public class Piano : grabObject
         ShowPiano();
         if(transform.CompareTag("Puzzle"))
         {
-            ExitGame();
+            ExitGame(false);
         }
         
     }
@@ -59,10 +59,10 @@ public class Piano : grabObject
 
 
     //ESC를 누르면 퍼즐에서 나감
-    void ExitGame()
+    public void ExitGame(bool esc)
     {
         //ESC로 나갈 때
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (esc)
         {
             //커서 제거
             Cursor.visible = false;

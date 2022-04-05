@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
@@ -10,6 +11,11 @@ public class UIManager : MonoBehaviour
     public GameObject PianoPanel;
     public GameObject RealPanel;
     public GameObject Inventory;
+    GameObject PianoObject;
+    GameObject LockObject;
+    GameObject Phone;
+    Piano PianoScript = null;
+    Lock LockScript = null;
 
     public Camera playerCam;
     public GameObject rayObject;
@@ -20,6 +26,14 @@ public class UIManager : MonoBehaviour
     void Start()
     {
         player = GameObject.Find("Player");
+        Phone = GameObject.Find("phone");
+        PianoObject = GameObject.Find("xylophone");
+
+        if(PianoObject != null)
+            PianoScript = PianoObject.GetComponent<Piano>();
+        LockObject = GameObject.Find("Lock");
+        if(LockObject != null)
+            LockScript = LockObject.GetComponent<Lock>();
 
         PausePanel.SetActive(false);
         ReportPanel.SetActive(false);
@@ -49,10 +63,13 @@ public class UIManager : MonoBehaviour
                 {
                     CloseMedicine();
                 }
-                else if (PianoPanel.activeSelf)
+                else if (PianoScript != null && PianoScript.PianoPanel.activeSelf)
                 {
-                    PianoPanel.SetActive(false);
-                    PlayerMove(true);
+                    PianoScript.ExitGame(true);
+                }
+                else if (LockScript != null && LockScript.isShowed)
+                {
+                    LockScript.ExitGame(true);
                 }
                 else
                 {
@@ -60,6 +77,10 @@ public class UIManager : MonoBehaviour
                 }
             }
         }
+
+        //if(Phone != null && !RealPanel.activeSelf)
+        //    if (Phone.GetComponent<Quiz6>().isSolve)
+        //        OpenRealPanel();
     }
 
     public void OpenRealPanel()
@@ -140,6 +161,8 @@ public class UIManager : MonoBehaviour
     public void NoReturnToReal()
     {
         Debug.Log("처음으로 돌아간다.");
+        //SceneManager.LoadScene("RealityRoom");
+        //다 완성하고 Scene 복사하면 해금할 것
     }
 
     void PlayerMove(bool b)

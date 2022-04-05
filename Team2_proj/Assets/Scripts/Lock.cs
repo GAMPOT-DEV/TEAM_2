@@ -5,6 +5,7 @@ using UnityEngine;
 public class Lock : MonoBehaviour
 {
     public bool isClicked;
+    public bool isShowed;
     public Transform setDest;
     public int chainNum;
     public int playerNum;
@@ -30,7 +31,7 @@ public class Lock : MonoBehaviour
     void Update()
     {
         ShowLock();
-        ExitGame();
+        ExitGame(false);
     }
 
 
@@ -54,20 +55,23 @@ public class Lock : MonoBehaviour
             //GetComponent<Collider>().enabled = false;
 
             isClicked = false;
+            isShowed = true;
         }
     }
 
     //게임 탈출
-    void ExitGame()
+    public void ExitGame(bool esc)
     {
         //ESC로 나갈 때
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (esc)
         {
             //커서 제거
             Cursor.visible = false;
 
             GetComponent<Collider>().enabled = true;
             player.GetComponent<PlayerMovement>().isMoveable = true;
+
+            isShowed = false;
         }
     }
 
