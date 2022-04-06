@@ -462,7 +462,7 @@ PrefabInstance:
     - target: {fileID: 7374482893005404180, guid: f7a170d3c7664c34ea97718d74f202cb,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -392.8
+      value: -498.6
       objectReference: {fileID: 0}
     - target: {fileID: 7374482893005404180, guid: f7a170d3c7664c34ea97718d74f202cb,
         type: 3}
@@ -5421,11 +5421,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: phone
-      objectReference: {fileID: 0}
-    - target: {fileID: 3428220250503565136, guid: 746f0b69c74dd154b8f86ffe0bf39a31,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8676482504689150348, guid: 746f0b69c74dd154b8f86ffe0bf39a31,
         type: 3}

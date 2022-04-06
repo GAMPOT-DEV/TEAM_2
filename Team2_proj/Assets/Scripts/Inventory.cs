@@ -7,8 +7,8 @@ public class Inventory : MonoBehaviour
 {
     bool changeExist;
     public bool isDetail;
-    bool isExist;
     public bool isGet;
+    public bool isExist;
     public bool[] itemCheck = new bool[7];
     public GameObject[] slots = new GameObject[7];
     public Sprite itemImage;
@@ -21,8 +21,6 @@ public class Inventory : MonoBehaviour
     {
         player = GameObject.Find("Player");
         TopView_UI = GameObject.Find("TopView_UI");
-        isExist = false;
-        isGet = false;
         isDetail = false;
         changeExist = false;
         for(int i = 0;i < transform.childCount; i++)
