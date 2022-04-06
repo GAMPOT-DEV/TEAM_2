@@ -94,6 +94,8 @@ public class UIManager : MonoBehaviour
 
     public void OpenPause()
     {
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.Confined;
         Inventory.SetActive(false);
         OpenPanel(PausePanel);
     }
@@ -115,6 +117,8 @@ public class UIManager : MonoBehaviour
 
     public void OnClickContinue()
     {
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
         PausePanel.SetActive(false);
         Inventory.SetActive(true);
         PlayerMove(true);
