@@ -49,8 +49,8 @@ public class UIManager : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (!(Inventory.GetComponentInChildren<Inventory>().isDetail))
-            {
+            //if (!(Inventory.GetComponentInChildren<Inventory>().isDetail))
+            //{
                 if (PausePanel.activeSelf)
                 {
                     OnClickContinue();
@@ -71,11 +71,15 @@ public class UIManager : MonoBehaviour
                 {
                     LockScript.ExitGame(true);
                 }
+                else if (Inventory.GetComponentInChildren<Inventory>().isDetail)
+                {
+                    Inventory.GetComponentInChildren<Inventory>().ExitDetail();
+                }
                 else
                 {
                     OpenPause();
                 }
-            }
+            //}
         }
 
         //if(Phone != null && !RealPanel.activeSelf)
