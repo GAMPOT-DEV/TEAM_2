@@ -17,6 +17,9 @@ public class RedBook : MonoBehaviour
         {
             if(isClicked&&!alreadyClear)
             {
+                //Gamemanager에게 클리어 데이터 전송
+                GameObject.Find("GameManager").GetComponent<GameManager>().SendClearData(this.gameObject);
+
                 alreadyClear = true;
                 Vector3 rot = new Vector3(transform.rotation.x+90, transform.rotation.y, transform.rotation.z+10);
                 isClicked = false;

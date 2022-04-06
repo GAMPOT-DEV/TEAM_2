@@ -45,15 +45,9 @@ public class GameManager : MonoBehaviour
         puzzleIndex.Add("Lock", 0);
         puzzleIndex.Add("Report", 0);
         puzzleIndex.Add("picture", 0);
+        puzzleIndex.Add("book_red", 0);
         //������ ������ �̸��� �߰��ϰ� �ּ����� ������
         /*puzzleIndex.Add("", 0);
-        puzzleIndex.Add("", 0);
-        puzzleIndex.Add("", 0);
-        puzzleIndex.Add("", 0);
-        puzzleIndex.Add("", 0);
-        puzzleIndex.Add("", 0);
-        puzzleIndex.Add("", 0);
-
         */
 
     }

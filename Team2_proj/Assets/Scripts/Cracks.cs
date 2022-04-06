@@ -20,10 +20,25 @@ public class Cracks : MonoBehaviour
             transform.GetChild(0).gameObject.SetActive(true);
         }
 
-        if(manager.puzzleIndex["Xylophone"] == 1)
+        if(manager.puzzleIndex["book_red"] == 1)
         {
-            transform.GetChild(0).gameObject.SetActive(false);
             transform.GetChild(1).gameObject.SetActive(true);
         }
+
+        if(manager.puzzleIndex["Xylophone"] == 1)
+        {
+            transform.GetChild(2).gameObject.SetActive(true);
+        }
+
+        if(manager.puzzleIndex["Report"] == 1)
+        {
+            transform.GetChild(3).gameObject.SetActive(true);
+            transform.GetChild(4).gameObject.SetActive(true);
+        }
+
+        // if(manager.puzzleIndex["Report"] == 1)
+        // {
+        //     
+        // }
     }
 }
