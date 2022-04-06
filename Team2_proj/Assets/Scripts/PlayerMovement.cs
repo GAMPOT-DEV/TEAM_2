@@ -168,6 +168,8 @@ public class PlayerMovement : MonoBehaviour
                 {
                     if(Input.GetMouseButtonDown(0))
                     {
+                        Cursor.visible = true;
+                        Cursor.lockState = CursorLockMode.Confined;
                         rayObject.GetComponent<Piano>().isClicked = true;
                     }
                     
@@ -178,6 +180,8 @@ public class PlayerMovement : MonoBehaviour
                 {
                     if (Input.GetMouseButtonDown(0))
                     {
+                        Cursor.visible = true;
+                        Cursor.lockState = CursorLockMode.Confined;
                         rayObject.GetComponent<Lock>().isClicked = true;
                     }
                 }
