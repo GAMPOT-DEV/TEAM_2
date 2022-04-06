@@ -8,15 +8,15 @@ public class PillQuiz : MonoBehaviour
     public GameObject PillBottle_A;
     public GameObject PillBottle_B;
     public Transform Pill;
-    Transform[] Pills = new Transform[4]; //...¿Ö transformÀÌÁö?
+    Transform[] Pills = new Transform[4]; //...ì™œ transformì´ì§€?
     bool createPill = false;
     int QuizStep = 0;
     public bool isSolved;
 
     /*
-     * 1. ¾àº´ AÀÇ ¾àÀ» ½ñ¾Ò´ÂÁö
-     * 2. ¾àº´ BÀÇ ¾àÀ» ½ñ¾Ò´ÂÁö
-     * 3. ¾àº´ AÀÇ ¾àÀ» ÇÏ³ª ´õ ½ñ¾Ò´ÂÁö
+     * 1. ì•½ë³‘ Aì˜ ì•½ì„ ìŸì•˜ëŠ”ì§€
+     * 2. ì•½ë³‘ Bì˜ ì•½ì„ ìŸì•˜ëŠ”ì§€
+     * 3. ì•½ë³‘ Aì˜ ì•½ì„ í•˜ë‚˜ ë” ìŸì•˜ëŠ”ì§€
     */
 
     // Start is called before the first frame update
@@ -50,10 +50,11 @@ public class PillQuiz : MonoBehaviour
                 Pills[0] = Instantiate(Pill, new Vector3(0f, 0.1f, 0f), Quaternion.identity);
                 Pills[0].transform.SetParent(gameObject.transform, false);
                 createPill = false;
+                PillBottle_A.GetComponent<PillBottle>().GrabOutBottle();
                 QuizStep++;
             }
         }
-        else if(QuizStep == 1)
+        else if (QuizStep == 1)
         {
             if (PillBottle_B.GetComponent<PillBottle>().isGrabing == true)
             {
@@ -67,6 +68,7 @@ public class PillQuiz : MonoBehaviour
                 Pills[1].transform.SetParent(gameObject.transform, false);
                 Pills[2].transform.SetParent(gameObject.transform, false);
                 createPill = false;
+                PillBottle_B.GetComponent<PillBottle>().GrabOutBottle();
                 QuizStep++;
             }
         }
@@ -82,16 +84,17 @@ public class PillQuiz : MonoBehaviour
                 Pills[3] = Instantiate(Pill, new Vector3(0f, 0.1f, 1f), Quaternion.identity);
                 Pills[3].transform.SetParent(gameObject.transform, false);
                 createPill = false;
+                PillBottle_A.GetComponent<PillBottle>().GrabOutBottle();
                 QuizStep++;
             }
         }
-        if(QuizStep == 3)
+        if (QuizStep == 3)
         {
             IsSolved();
         }
     }
 
-    //¾àÀ» ÀüºÎ ºÎ½¥À» ¶§, ¹®Á¦ ÇØ°á
+    //ì•½ì„ ì „ë¶€ ë¶€ì‰ˆì„ ë•Œ, ë¬¸ì œ í•´ê²°
     public bool IsSolved()
     {
         if (!isSolved)
