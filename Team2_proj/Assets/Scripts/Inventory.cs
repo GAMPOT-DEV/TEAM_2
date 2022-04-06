@@ -31,7 +31,6 @@ public class Inventory : MonoBehaviour
         curSlot = slots[0];
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (isGet == true) {
@@ -132,14 +131,6 @@ public class Inventory : MonoBehaviour
                 isDetail = true;
             }
         }
-        /*
-        if (Input.GetKeyDown(KeyCode.Escape) && (isDetail == true))
-        {
-            TopView_UI.GetComponent<Image>().enabled = false;
-            player.GetComponent<PlayerMovement>().isMoveable = true;
-            isDetail = false;
-        }
-        */
     }
 
     public void ExitDetail()

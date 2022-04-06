@@ -49,8 +49,6 @@ public class UIManager : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            //if (!(Inventory.GetComponentInChildren<Inventory>().isDetail))
-            //{
                 if (PausePanel.activeSelf)
                 {
                     OnClickContinue();
@@ -79,12 +77,11 @@ public class UIManager : MonoBehaviour
                 {
                     OpenPause();
                 }
-            //}
         }
 
-        //if(Phone != null && !RealPanel.activeSelf)
-        //    if (Phone.GetComponent<Quiz6>().isSolve)
-        //        OpenRealPanel();
+        if(Phone != null && !RealPanel.activeSelf)
+            if (Phone.GetComponent<Quiz6>().isSolve)
+                OpenRealPanel();
     }
 
     public void OpenRealPanel()
@@ -164,7 +161,6 @@ public class UIManager : MonoBehaviour
     public void ReturnToReal()
     {
         //SceneManager.LoadScene("RealityRoom");
-        GameObject.Find("로마숫자퀴즈오브젝트이름").GetComponent<RomeNumQuiz>().isSolve = true;
     }
 
     public void NoReturnToReal()
