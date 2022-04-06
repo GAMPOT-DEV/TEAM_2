@@ -260,6 +260,7 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
+            GameObject.Find("Crosshair").GetComponent<CrossHair>().isFocus = false;
             rayObject = null;
         } 
     }
