@@ -155,7 +155,7 @@ public class PlayerMovement : MonoBehaviour
                     }
                     //월드 좌표를 로컬 좌표로 변환
                     if (Physics.Raycast(transform.position, -Vector3.up, 100))
-                    {
+                    {   
                         Vector3 v3LocalPoint = hit.transform.InverseTransformPoint(hit.point);
                         rayObject.GetComponentInParent<FindWrongPicture>().isFocus = true;
                         rayObject.GetComponentInParent<FindWrongPicture>().localPoint = v3LocalPoint;
@@ -233,7 +233,7 @@ public class PlayerMovement : MonoBehaviour
 
                     if (Input.GetMouseButtonDown(0))
                     {
-                        
+                        GameObject.Find("GameManager").GetComponent<GameManager>().SendClearData(rayObject);
                         rayObject.GetComponent<ReportQuiz>().isSolved = true;
                         rayObject.GetComponent<ReportQuiz>().ChangeTag();
                     }
