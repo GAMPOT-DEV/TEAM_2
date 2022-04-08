@@ -200,6 +200,7 @@ MonoBehaviour:
   PianoPanel: {fileID: 1145522997}
   RealPanel: {fileID: 1008353318}
   Inventory: {fileID: 679307637}
+  Quiz8: {fileID: 0}
   playerCam: {fileID: 62191398}
   rayObject: {fileID: 0}
   player: {fileID: 573592586}
@@ -3852,6 +3853,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7563990820576355510, guid: e3c917aef3763bb49a74ece12f7bcc82,
         type: 3}
+      propertyPath: m_Constraints
+      value: 112
+      objectReference: {fileID: 0}
+    - target: {fileID: 7563990820576355510, guid: e3c917aef3763bb49a74ece12f7bcc82,
+        type: 3}
       propertyPath: m_IsKinematic
       value: 0
       objectReference: {fileID: 0}
@@ -6064,7 +6070,7 @@ PrefabInstance:
     - target: {fileID: 7563990820576355510, guid: e3c917aef3763bb49a74ece12f7bcc82,
         type: 3}
       propertyPath: m_Constraints
-      value: 0
+      value: 112
       objectReference: {fileID: 0}
     - target: {fileID: 7563990820576355510, guid: e3c917aef3763bb49a74ece12f7bcc82,
         type: 3}

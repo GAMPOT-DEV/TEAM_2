@@ -11,6 +11,7 @@ public class UIManager : MonoBehaviour
     public GameObject PianoPanel;
     public GameObject RealPanel;
     public GameObject Inventory;
+    public GameObject Quiz8;
     GameObject PianoObject;
     GameObject LockObject;
     GameObject Phone;
@@ -93,7 +94,7 @@ public class UIManager : MonoBehaviour
     {
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.Confined;
-        Inventory.SetActive(false);
+        //Inventory.SetActive(false);
         OpenPanel(PausePanel);
     }
 
@@ -161,6 +162,7 @@ public class UIManager : MonoBehaviour
     public void ReturnToReal()
     {
         //SceneManager.LoadScene("RealityRoom");
+        Quiz8.SetActive(true);
     }
 
     public void NoReturnToReal()

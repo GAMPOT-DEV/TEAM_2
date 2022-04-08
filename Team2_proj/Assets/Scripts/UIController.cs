@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class UIController : MonoBehaviour
 {
-    public GameObject PausePanel; //ESC ´©¸£¸é ³ª¿À´Â Pause Ã¢
-    public GameObject ReportPanel; //Ã³¹æÀü ´©¸£¸é È®´ëµÇ´Â Ã¢
-    public GameObject MedicinePacketPanel; //¾àºÀÁö ´©¸£¸é È®´ëµÇ´Â Ã¢
-    public GameObject PianoPanel; //½Ç·ÎÆù ´©¸£¸é ³ª¿À´Â Ã¢
+    public GameObject PausePanel; //ESC ëˆ„ë¥´ë©´ ë‚˜ì˜¤ëŠ” Pause ì°½
+    public GameObject ReportPanel; //ì²˜ë°©ì „ ëˆ„ë¥´ë©´ í™•ëŒ€ë˜ëŠ” ì°½
+    public GameObject MedicinePacketPanel; //ì•½ë´‰ì§€ ëˆ„ë¥´ë©´ í™•ëŒ€ë˜ëŠ” ì°½
+    public GameObject PianoPanel; //ì‹¤ë¡œí° ëˆ„ë¥´ë©´ ë‚˜ì˜¤ëŠ” ì°½
     
     void Start()
     {
