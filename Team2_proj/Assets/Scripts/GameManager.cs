@@ -47,8 +47,9 @@ public class GameManager : MonoBehaviour
         puzzleIndex.Add("Report", 0);
         puzzleIndex.Add("picture", 0);
         puzzleIndex.Add("book_red", 0);
+        puzzleIndex.Add("Pill Bound", 0);
         //������ ������ �̸��� �߰��ϰ� �ּ����� ������
-        /*puzzleIndex.Add("", 0);
+        /*puzzleIndex.Add("Pill Bound", 0);
         */
 
     }

@@ -110,7 +110,8 @@ public class PillQuiz : MonoBehaviour
         }
 
         isSolved = true;
-        SceneManager.LoadScene("RealityRoom");
+        GameObject.Find("GameManager").GetComponent<GameManager>().SendClearData(this.gameObject);
+        //SceneManager.LoadScene("RealityRoom");
         return true;
     }
 }
