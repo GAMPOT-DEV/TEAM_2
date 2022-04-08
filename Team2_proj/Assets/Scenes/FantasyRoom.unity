@@ -7533,6 +7533,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 418623253367661993, guid: 65b74dfa6ef9aa44fa3454082ba8c801,
         type: 3}
+      propertyPath: Pill
+      value: 
+      objectReference: {fileID: 7644545561228201399, guid: bd4d81de23a8f644d900ce2f7191c691,
+        type: 3}
+    - target: {fileID: 418623253367661993, guid: 65b74dfa6ef9aa44fa3454082ba8c801,
+        type: 3}
       propertyPath: PillBottle_A
       value: 
       objectReference: {fileID: 1480750967}

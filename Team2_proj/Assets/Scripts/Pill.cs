@@ -5,11 +5,16 @@ using UnityEngine;
 public class Pill : MonoBehaviour
 {
     public bool IsBroken = false;
+    public GameObject RightPill;
 
     public void PillBreak()
     {
-        IsBroken = true;
+        if (!IsBroken)
+        {
+            RightPill.transform.localPosition += new Vector3(-0.1f, 0f, 0f);
+            IsBroken = true;
+        }
     }
 
-    //¾à ºÎ¼­Áö´Â ¾Ö´Ï¸ŞÀÌ¼Ç Ãß°¡ ¿¹Á¤
+    //ì•½ ë¶€ì„œì§€ëŠ” ì• ë‹ˆë©”ì´ì…˜ ì¶”ê°€ ì˜ˆì •
 }

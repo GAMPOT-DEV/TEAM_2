@@ -252,7 +252,7 @@ public class PlayerMovement : MonoBehaviour
                 //rayObject.GetComponent<PillQuiz>().PillQuizStart();
             }
 
-            if (rayObject.name == "pill(Clone)")
+            if (rayObject.name == "pill_seperated Variant(Clone)")
             {
                 Debug.Log("Pill");
                 if (Input.GetMouseButtonDown(0))
