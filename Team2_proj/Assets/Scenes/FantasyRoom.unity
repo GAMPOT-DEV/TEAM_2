@@ -4427,6 +4427,11 @@ PrefabInstance:
       propertyPath: m_PlayAutomatically
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7867337434256610033, guid: e846271b0d11124499eb9efdbd8a1db3,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -137
+      objectReference: {fileID: 0}
     - target: {fileID: 7867337434849192093, guid: e846271b0d11124499eb9efdbd8a1db3,
         type: 3}
       propertyPath: m_Name
