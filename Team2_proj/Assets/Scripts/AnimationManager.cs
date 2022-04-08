@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class AnimationManager : MonoBehaviour
 {
     public GameObject eyes;
@@ -24,6 +24,15 @@ public class AnimationManager : MonoBehaviour
             eyes.SetActive(true);
             Animator myAnim = eyes.GetComponent<Animator>();
             WaitForAnimEnd(myAnim);
+        }
+
+        if(sceneChange.activeSelf)
+        {
+            Animator sceneChangeAnim = sceneChange.GetComponent<Animator>();
+            if(sceneChangeAnim.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1.0f)
+            {
+                SceneManager.LoadScene("RealityRoom");
+            }
         }
     }
 
