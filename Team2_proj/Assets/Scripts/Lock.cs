@@ -79,7 +79,7 @@ public class Lock : MonoBehaviour
     //자물쇠 정답, 플레이어의 현재 번호 정보
     public void Init()
     {
-        lockArr = new int[] { 1, 2, 3, 4 };
+        lockArr = new int[] { 2, 9, 9, 2 };
         playerArr = new int[] { 1, 1, 1, 1 };
         chainNum = 0;
         playerNum = 1;
