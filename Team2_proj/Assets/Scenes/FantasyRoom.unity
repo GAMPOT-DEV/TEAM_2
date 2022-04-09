@@ -3842,26 +3842,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pill Bottle B
       objectReference: {fileID: 0}
-    - target: {fileID: 6877987219828900278, guid: e3c917aef3763bb49a74ece12f7bcc82,
-        type: 3}
-      propertyPath: m_TagString
-      value: Grabable
-      objectReference: {fileID: 0}
-    - target: {fileID: 7563990820576355510, guid: e3c917aef3763bb49a74ece12f7bcc82,
-        type: 3}
-      propertyPath: m_UseGravity
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7563990820576355510, guid: e3c917aef3763bb49a74ece12f7bcc82,
-        type: 3}
-      propertyPath: m_Constraints
-      value: 112
-      objectReference: {fileID: 0}
-    - target: {fileID: 7563990820576355510, guid: e3c917aef3763bb49a74ece12f7bcc82,
-        type: 3}
-      propertyPath: m_IsKinematic
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e3c917aef3763bb49a74ece12f7bcc82, type: 3}
 --- !u!1 &1118518303
@@ -6062,21 +6042,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Pill Bottle A
-      objectReference: {fileID: 0}
-    - target: {fileID: 6877987219828900278, guid: e3c917aef3763bb49a74ece12f7bcc82,
-        type: 3}
-      propertyPath: m_TagString
-      value: Grabable
-      objectReference: {fileID: 0}
-    - target: {fileID: 7563990820576355510, guid: e3c917aef3763bb49a74ece12f7bcc82,
-        type: 3}
-      propertyPath: m_Constraints
-      value: 112
-      objectReference: {fileID: 0}
-    - target: {fileID: 7563990820576355510, guid: e3c917aef3763bb49a74ece12f7bcc82,
-        type: 3}
-      propertyPath: m_IsKinematic
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e3c917aef3763bb49a74ece12f7bcc82, type: 3}
