@@ -721,9 +721,26 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 2
-  m_Text: "Product Manager   Taehyeon Kim\n\uC591\uD76C\uC9C4\n\uD64D\uC815\uC6B0\n\n3D
-    Designer   Yearim Yoon\n\uC194\uC544\n\n\uAE40\uC720\uC900\n\uBC15\uCC44\uC601\nGame
-    Developer   Hyunteak Hwang"
+  m_Text: 'Product Manager   Taehyeon Kim
+
+    Product Manager   Hyunjin Yang
+
+    Product
+    Manager   Jungwoo Hong
+
+
+    3D Designer   Yearim Yoon
+
+    3D Designer   Sola
+    Lee
+
+
+    Game Developer   Yujun Kim
+
+    Game Developer   Chaeyoung Park
+
+    Game
+    Developer   Hyunteak Hwang'
 --- !u!222 &1821382553
 CanvasRenderer:
   m_ObjectHideFlags: 0
