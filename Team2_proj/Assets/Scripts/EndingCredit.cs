@@ -10,6 +10,6 @@ public class EndingCredit : MonoBehaviour
         {
             Application.Quit(); // 어플리케이션 종료
         }
-        transform.position = new Vector3(transform.position.x, transform.position.y+0.2f, transform.position.z);
+        transform.position = new Vector3(transform.position.x, transform.position.y+0.5f, transform.position.z);
     }
 }
