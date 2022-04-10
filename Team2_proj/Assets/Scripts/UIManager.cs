@@ -106,11 +106,12 @@ public class UIManager : MonoBehaviour
 
     public void OnClickQuit()
     {
-#if UNITY_EDITOR
-        UnityEditor.EditorApplication.isPlaying = false;
-#else
-        Application.Quit();
-#endif
+        //#if UNITY_EDITOR
+        //        UnityEditor.EditorApplication.isPlaying = false;
+        //#else
+        //        Application.Quit();
+        //#endif
+        SceneManager.LoadScene("MainScreen");
     }
 
     public void OnClickContinue()
