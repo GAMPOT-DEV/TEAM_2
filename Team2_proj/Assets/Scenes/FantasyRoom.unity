@@ -3908,6 +3908,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pill Bottle B
       objectReference: {fileID: 0}
+    - target: {fileID: 6877987219828900278, guid: e3c917aef3763bb49a74ece12f7bcc82,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e3c917aef3763bb49a74ece12f7bcc82, type: 3}
 --- !u!1 &1118518303
@@ -6062,37 +6067,37 @@ PrefabInstance:
     - target: {fileID: 6068693148734085900, guid: e3c917aef3763bb49a74ece12f7bcc82,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.729
+      value: 3.7289877
       objectReference: {fileID: 0}
     - target: {fileID: 6068693148734085900, guid: e3c917aef3763bb49a74ece12f7bcc82,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -8.386
+      value: -8.386845
       objectReference: {fileID: 0}
     - target: {fileID: 6068693148734085900, guid: e3c917aef3763bb49a74ece12f7bcc82,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.99999887
       objectReference: {fileID: 0}
     - target: {fileID: 6068693148734085900, guid: e3c917aef3763bb49a74ece12f7bcc82,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: 0.0015059859
       objectReference: {fileID: 0}
     - target: {fileID: 6068693148734085900, guid: e3c917aef3763bb49a74ece12f7bcc82,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 6068693148734085900, guid: e3c917aef3763bb49a74ece12f7bcc82,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 6068693148734085900, guid: e3c917aef3763bb49a74ece12f7bcc82,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
+      value: 0.173
       objectReference: {fileID: 0}
     - target: {fileID: 6068693148734085900, guid: e3c917aef3763bb49a74ece12f7bcc82,
         type: 3}
@@ -6108,6 +6113,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Pill Bottle A
+      objectReference: {fileID: 0}
+    - target: {fileID: 6877987219828900278, guid: e3c917aef3763bb49a74ece12f7bcc82,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e3c917aef3763bb49a74ece12f7bcc82, type: 3}
