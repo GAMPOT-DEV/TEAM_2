@@ -168,9 +168,7 @@ public class UIManager : MonoBehaviour
 
     public void NoReturnToReal()
     {
-        Debug.Log("처음으로 돌아간다.");
-        //SceneManager.LoadScene("RealityRoom");
-        //다 완성하고 Scene 복사하면 해금할 것
+        SceneManager.LoadScene("FantasyRoom");
     }
 
     void PlayerMove(bool b)

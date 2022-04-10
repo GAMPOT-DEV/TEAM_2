@@ -116,7 +116,7 @@ public class Inventory : MonoBehaviour
     {
         if(currentItem == GameObject.Find("pianopaper(Clone)"))
         {
-            currentItem.transform.localEulerAngles = new Vector3(-332, 21, 2);
+            currentItem.transform.localEulerAngles = new Vector3(-350, 21, 2);
         }
         if(currentItem == GameObject.Find("Report"))
         {
