@@ -4,12 +4,19 @@ using UnityEngine;
 
 public class EndingCredit : MonoBehaviour
 {
-    void Update()
+    void Start()
     {
-        if(transform.position.y >= 7500)
+        StartCoroutine(Credit());
+    }
+
+    IEnumerator Credit()
+    {
+        while(transform.position.y <= 10000)
         {
-            Application.Quit(); // 어플리케이션 종료
+            transform.position = new Vector3(transform.position.x, transform.position.y + 3f, transform.position.z);
+            yield return new WaitForSecondsRealtime(0.01f);
         }
-        transform.position = new Vector3(transform.position.x, transform.position.y+1f, transform.position.z);
+        Application.Quit();
+        Debug.Log("hello");
     }
 }
