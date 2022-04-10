@@ -28,7 +28,7 @@ public class PlayerMovement : MonoBehaviour
         MoveSpeed = 4.0f;
         rotSpeed = 3.0f;
         currentRot = 0f;
-        jumpPower = 5.0f;
+        jumpPower = 17.0f;
         isJumping = false;
         rayObject = null;
         isMoveable = true;
