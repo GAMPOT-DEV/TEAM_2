@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: dbbec644761ddb242a26ea79de658e7d
+guid: 35740c18598114c488f467fcda676989
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -10,10 +10,7 @@ TrueTypeFontImporter:
   includeFontData: 1
   fontNames:
   - MaruBuriOTF
-  fallbackFontReferences:
-  - {fileID: 12800000, guid: 32aecf923f890a0499f4e36fb51ce276, type: 3}
-  - {fileID: 12800000, guid: a95d18f99af1b954d8e597aa7c58cd88, type: 3}
-  - {fileID: 12800000, guid: 93d0ed28266f21b43a8e418d796549f0, type: 3}
+  fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0
   ascentCalculationMode: 1
