@@ -112,6 +112,22 @@ public class Inventory : MonoBehaviour
         changeExist = false;
     }
 
+    public void setRotation(GameObject currentItem)
+    {
+        if(currentItem == GameObject.Find("pianopaper(Clone)"))
+        {
+            currentItem.transform.localEulerAngles = new Vector3(-332, 21, 2);
+        }
+        if(currentItem == GameObject.Find("Report"))
+        {
+            currentItem.transform.localEulerAngles = new Vector3(-23, 90, 0);
+        }
+        if (currentItem == GameObject.Find("phone"))
+        {
+            currentItem.transform.localEulerAngles = new Vector3(320, 90, 0);
+        }
+    }
+
     void ImageDetail()
     {
         if (Input.GetKeyDown(KeyCode.R) && (isDetail == false))
